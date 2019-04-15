@@ -59,32 +59,36 @@
         context = canvas.getContext("2d");
         context.strokeStyle="#ff0000";
         var mouse = {x: 0, y: 0};
+        var touch = {x: 0, y: 0};
         var draw = false;
 
         canvas.ontouchstart = function(e) {
             if (e.touches) e = e.touches[0];
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop;
+            touch.x = e.pageX - this.offsetLeft;
+            touch.y = e.pageY - this.offsetTop;
             draw = true;
             context.beginPath();
-            context.moveTo(mouse.x, mouse.y);
+            console.log(0, touch.x, touch.y);
+            context.moveTo(touch.x*2, touch.y*2);
             return false;
         };
         canvas.ontouchmove = function(e){
             if (e.touches) e = e.touches[0];
             if (draw == true) {
-                mouse.x = e.pageX - this.offsetLeft;
-                mouse.y = e.pageY - this.offsetTop;
-                context.lineTo(mouse.x, mouse.y);
+                touch.x = e.pageX - this.offsetLeft;
+                touch.y = e.pageY - this.offsetTop;
+                console.log(1, touch.x, touch.y);
+                context.lineTo(touch.x*2, touch.y*2);
                 context.stroke();
             }
             return false;
         };
         canvas.ontouchend = function(e){
             if (e.touches) e = e.touches[0];
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop;
-            context.lineTo(mouse.x, mouse.y);
+            touch.x = e.pageX - this.offsetLeft;
+            touch.y = e.pageY - this.offsetTop;
+            console.log(2, touch.x, touch.y);
+            context.lineTo(touch.x*2, touch.y*2);
             context.stroke();
             context.closePath();
             draw = false;
