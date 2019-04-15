@@ -45,7 +45,7 @@ ImporterApp.prototype.Init = function ()
 		].join (''));
 		return;
 	}
-	
+
 	var myThis = this;
 	var top = document.getElementById ('top');
 	this.importerButtons = new ImporterButtons (top);
@@ -67,7 +67,7 @@ ImporterApp.prototype.Init = function ()
 
 	this.extensionButtons = new ExtensionButtons (top);
 	this.aboutDialog = new FloatingDialog ();
-	
+
 	var match = window.matchMedia ('(max-device-width : 360px)');
 	this.isMobile = match.matches;
 
@@ -81,10 +81,10 @@ ImporterApp.prototype.Init = function ()
 
 	window.addEventListener ('dragover', this.DragOver.bind (this), false);
 	window.addEventListener ('drop', this.Drop.bind (this), false);
-	
+
 	var fileInput = document.getElementById ('file');
 	fileInput.addEventListener ('change', this.FileSelected.bind (this), false);
-	
+
 	window.onhashchange = this.LoadFilesFromHash.bind (this);
 	var hasHashModel = this.LoadFilesFromHash ();
 	if (hasHashModel && this.isMobile) {
@@ -110,7 +110,7 @@ ImporterApp.prototype.AddExtension = function (extension)
 	if (!extension.IsEnabled ()) {
 		return;
 	}
-	
+
 	var extInterface = new ExtensionInterface (this);
 	extension.Init (extInterface);
 };
@@ -144,7 +144,7 @@ ImporterApp.prototype.ShowAboutDialog2 = function ()
 		'<div' +
 		' style="width: 80vw; height: 60vh"' +
 		'>',
-			this.GetWelcomeText2 (),
+		this.GetWelcomeText2 (),
 		'</div>' +
 		'<textarea style="width: 100%"></textarea>',
 	].join ('');
@@ -200,6 +200,35 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            context.closePath();' +
 		'            draw = false;' +
 		'        });' +
+		'canvas.ontouchstart = function(e) {' +
+		'            if (e.touches) e = e.touches[0];' +
+		'            mouse.x = e.pageX - this.offsetLeft;' +
+		'            mouse.y = e.pageY - this.offsetTop;' +
+		'            draw = true;' +
+		'            context.beginPath();' +
+		'            context.moveTo(mouse.x, mouse.y);' +
+		'            return false;' +
+		'        };' +
+		'        canvas.ontouchmove = function(e){' +
+		'            if (e.touches) e = e.touches[0];' +
+		'            if (draw == true) {' +
+		'                mouse.x = e.pageX - this.offsetLeft;' +
+		'                mouse.y = e.pageY - this.offsetTop;' +
+		'                context.lineTo(mouse.x, mouse.y);' +
+		'                context.stroke();' +
+		'            }' +
+		'            return false;' +
+		'        };' +
+		'        canvas.ontouchend = function(e){' +
+		'            if (e.touches) e = e.touches[0];' +
+		'            mouse.x = e.pageX - this.offsetLeft;' +
+		'            mouse.y = e.pageY - this.offsetTop;' +
+		'            context.lineTo(mouse.x, mouse.y);' +
+		'            context.stroke();' +
+		'            context.closePath();' +
+		'            draw = false;' +
+		'            return false;' +
+		'        };' +
 		'});'+
 		'</script>',
 	].join ('');
@@ -235,22 +264,22 @@ ImporterApp.prototype.GetWelcomeText = function ()
 {
 	var welcomeText = [
 		'<table>' +
-			'<tr>' +
-				'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
-				'<td><span class="welcometitle" style="color: #006d91"> - Выровнять по центру</span></td>' +
-			'</tr>' +
-			'<tr>' +
-				'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
-				'<td><span class="welcometitle" style="color: #006d91"> - Повернуть в указанное положение</span></td>' +
-			'</tr>' +
-			'<tr>' +
-				'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/camera2.svg"/></span></td>' +
-				'<td><span class="welcometitle" style="color: #006d91"> - Сделать скриншот</span></td>' +
-			'</tr>' +
-			'<tr>' +
-				'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/help.png"/></span></td>' +
-				'<td><span class="welcometitle" style="color: #006d91"> - Описание</span></td>' +
-			'</tr>' +
+		'<tr>' +
+		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - Выровнять по центру</span></td>' +
+		'</tr>' +
+		'<tr>' +
+		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - Повернуть в указанное положение</span></td>' +
+		'</tr>' +
+		'<tr>' +
+		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/camera2.svg"/></span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - Сделать скриншот</span></td>' +
+		'</tr>' +
+		'<tr>' +
+		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/help.png"/></span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - Описание</span></td>' +
+		'</tr>' +
 		'</table>',
 	].join ('');
 	return welcomeText;
@@ -282,7 +311,7 @@ ImporterApp.prototype.Resize = function ()
 
 	SetHeight (canvas, height);
 	SetWidth (canvas, document.body.clientWidth);
-	
+
 	this.aboutDialog.Resize ();
 };
 
@@ -508,7 +537,7 @@ ImporterApp.prototype.GenerateError = function (errorMessage)
 	this.viewer.RemoveMeshes ();
 	var menu = $('#menu');
 	menu.empty ();
-	
+
 	this.aboutDialog.Open ({
 		title : 'Error',
 		text : '<div class="importerdialog">' + errorMessage + '</div>',
@@ -520,7 +549,7 @@ ImporterApp.prototype.GenerateError = function (errorMessage)
 				}
 			}
 		]
-	});	
+	});
 };
 
 ImporterApp.prototype.Generate = function (progressBar)
@@ -770,7 +799,7 @@ ImporterApp.prototype.HighlightMesh = function (meshIndex)
 			}
 		}
 	}
-	
+
 	this.viewer.Draw ();
 };
 
@@ -850,9 +879,9 @@ ImporterApp.prototype.LoadFilesFromHash = function ()
 		fileInput.css ('position', 'absolute');
 		fileInput.css ('right', '10px');
 		fileInput.css ('bottom', '10px');
-		return false;	
+		return false;
 	}
-	
+
 	fileInput.css ('display', 'none');
 	var hash = hash.substr (1, hash.length - 1);
 	var fileList = hash.split (',');
