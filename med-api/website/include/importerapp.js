@@ -177,24 +177,26 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'context.strokeStyle="#ff0000";' +
 		'var mouse = {x: 0, y: 0};' +
 		'var draw = false;' +
+		'var koefx = 1.15;' +
+		'var koefy = 1.5;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
-		'            mouse.x = e.pageX - this.offsetLeft;' +
-		'            mouse.y = e.pageY - this.offsetTop;' +
+		'            mouse.x = e.pageX*koefx - this.offsetLeft;' +
+		'            mouse.y = e.pageY*koefy - this.offsetTop;' +
 		'            draw = true;' +
 		'            context.beginPath();' +
 		'            context.moveTo(mouse.x, mouse.y);' +
 		'        });' +
 		'        canvas.addEventListener("mousemove", function (e) {' +
 		'            if (draw == true) {' +
-		'                mouse.x = e.pageX - this.offsetLeft;' +
-		'                mouse.y = e.pageY - this.offsetTop;' +
+		'                mouse.x = e.pageX*koefx - this.offsetLeft;' +
+		'                mouse.y = e.pageY*koefy - this.offsetTop;' +
 		'                context.lineTo(mouse.x, mouse.y);' +
 		'                context.stroke();' +
 		'            }' +
 		'        });' +
 		'        canvas.addEventListener("mouseup", function (e) {' +
-		'            mouse.x = e.pageX - this.offsetLeft;' +
-		'            mouse.y = e.pageY - this.offsetTop;' +
+		'            mouse.x = e.pageX*koefx - this.offsetLeft;' +
+		'            mouse.y = e.pageY*koefy - this.offsetTop;' +
 		'            context.lineTo(mouse.x, mouse.y);' +
 		'            context.stroke();' +
 		'            context.closePath();' +
@@ -206,7 +208,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            mouse.y = e.pageY - this.offsetTop;' +
 		'            draw = true;' +
 		'            context.beginPath();' +
-		'            context.moveTo(mouse.x*2, mouse.y*2);' +
+		'            context.moveTo(mouse.x*koef, mouse.y*koef);' +
 		'            return false;' +
 		'        };' +
 		'        canvas.ontouchmove = function(e){' +
@@ -214,7 +216,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            if (draw == true) {' +
 		'                mouse.x = e.pageX - this.offsetLeft;' +
 		'                mouse.y = e.pageY - this.offsetTop;' +
-		'                context.lineTo(mouse.x*2, mouse.y*2);' +
+		'                context.lineTo(mouse.x*koef, mouse.y*koef);' +
 		'                context.stroke();' +
 		'            }' +
 		'            return false;' +
@@ -223,7 +225,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            if (e.touches) e = e.touches[0];' +
 		'            mouse.x = e.pageX - this.offsetLeft;' +
 		'            mouse.y = e.pageY - this.offsetTop;' +
-		'            context.lineTo(mouse.x*2, mouse.y*2);' +
+		'            context.lineTo(mouse.x*koef, mouse.y*koef);' +
 		'            context.stroke();' +
 		'            context.closePath();' +
 		'            draw = false;' +

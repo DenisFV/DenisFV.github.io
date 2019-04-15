@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div id="capture" style="padding: 10px;">
+<div id="capture" style="padding: 10px; width: 100%; height: 100%;">
     <h4 style="color: #000; ">Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!
         Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world! Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello
         world!Hello world!Hello world!Hello world!Hello world!
@@ -35,65 +35,66 @@
 </div>
 
 <script>
-    function getPDF() {
-        doCanvas();
-    }
-    function doCanvas() {
-        html2canvas(document.querySelector("#myDiv")).then(canvas => {
-            doPDF(canvas);
-        });
-    }
-    function doPDF(canvas) {
-        var doc = new jsPDF({
-            format: 'a4',
-        });
-        doc.addImage(canvas.toDataURL(), 'PNG', 0, 0);
-        doc.save('test.pdf');
-    }
+    // function getPDF() {
+    //     doCanvas();
+    // }
+    // function doCanvas() {
+    //     html2canvas(document.querySelector("#myDiv")).then(canvas => {
+    //         doPDF(canvas);
+    //     });
+    // }
+    // function doPDF(canvas) {
+    //     var doc = new jsPDF({
+    //         format: 'a4',
+    //     });
+    //     doc.addImage(canvas.toDataURL(), 'PNG', 0, 0);
+    //     doc.save('test.pdf');
+    // }
 
 
     html2canvas(document.querySelector("#capture")).then(canvas => {
         canvas.style.border = '2px solid #ff0000';
         document.querySelector("#capture").appendChild(canvas);
-
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
         context = canvas.getContext("2d");
         context.strokeStyle="#ff0000";
         var mouse = {x: 0, y: 0};
         var touch = {x: 0, y: 0};
         var draw = false;
 
-        canvas.ontouchstart = function(e) {
-            if (e.touches) e = e.touches[0];
-            touch.x = e.pageX - this.offsetLeft;
-            touch.y = e.pageY - this.offsetTop;
-            draw = true;
-            context.beginPath();
-            console.log(0, touch.x, touch.y);
-            context.moveTo(touch.x*2, touch.y*2);
-            return false;
-        };
-        canvas.ontouchmove = function(e){
-            if (e.touches) e = e.touches[0];
-            if (draw == true) {
-                touch.x = e.pageX - this.offsetLeft;
-                touch.y = e.pageY - this.offsetTop;
-                console.log(1, touch.x, touch.y);
-                context.lineTo(touch.x*2, touch.y*2);
-                context.stroke();
-            }
-            return false;
-        };
-        canvas.ontouchend = function(e){
-            if (e.touches) e = e.touches[0];
-            touch.x = e.pageX - this.offsetLeft;
-            touch.y = e.pageY - this.offsetTop;
-            console.log(2, touch.x, touch.y);
-            context.lineTo(touch.x*2, touch.y*2);
-            context.stroke();
-            context.closePath();
-            draw = false;
-            return false;
-        };
+        // canvas.ontouchstart = function(e) {
+        //     if (e.touches) e = e.touches[0];
+        //     touch.x = e.pageX - this.offsetLeft;
+        //     touch.y = e.pageY - this.offsetTop;
+        //     draw = true;
+        //     context.beginPath();
+        //     console.log(0, touch.x, touch.y);
+        //     context.moveTo(touch.x*2, touch.y*2);
+        //     return false;
+        // };
+        // canvas.ontouchmove = function(e){
+        //     if (e.touches) e = e.touches[0];
+        //     if (draw == true) {
+        //         touch.x = e.pageX - this.offsetLeft;
+        //         touch.y = e.pageY - this.offsetTop;
+        //         console.log(1, touch.x, touch.y);
+        //         context.lineTo(touch.x*2, touch.y*2);
+        //         context.stroke();
+        //     }
+        //     return false;
+        // };
+        // canvas.ontouchend = function(e){
+        //     if (e.touches) e = e.touches[0];
+        //     touch.x = e.pageX - this.offsetLeft;
+        //     touch.y = e.pageY - this.offsetTop;
+        //     console.log(2, touch.x, touch.y);
+        //     context.lineTo(touch.x*2, touch.y*2);
+        //     context.stroke();
+        //     context.closePath();
+        //     draw = false;
+        //     return false;
+        // };
 
 
         canvas.addEventListener("mousedown", function (e) { //нажал
