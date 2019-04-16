@@ -140,7 +140,8 @@ ImporterApp.prototype.ShowMenu = function ()
 ImporterApp.prototype.ShowAboutDialog2 = function ()
 {
 	var dialogText = [
-		'<div class="importerdialog">',
+		'<div class="importerdialog"' +
+		'>',
 		// '<div' +
 		// ' style="width: 100vw; height: 100vh"' +
 		// ' style="width: 10%;"' +
@@ -171,19 +172,25 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'</div>'+
 		'<script>'+
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
+		// ' canvas.style.width = document.getElementById("example").width;' +
+		// ' canvas.style.height = document.getElementById("example").height;' +
+		// ' canvas.width = $(window).width;' +
+		// ' canvas.height = document.getElementById("example").height;' +
 		// 'canvas.style.width = "100vw";' +
 		// 'canvas.style.height = "100vh";' +
 		'document.querySelector("#screen").appendChild(canvas);'+
 		'context = canvas.getContext("2d");' +
 		'context.strokeStyle="#ff0000";' +
+		'context.width = document.getElementById("example").width;' +
+		'context.height = document.getElementById("example").height;' +
 		'var mouse = {x: 0, y: 0};' +
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
 		// 'var koeftx = 3.75;' +
 		// 'var koeftxx = 13.5;' +
-		'var koeftx = 1;' +
-		'var koeftxx = 1;' +
+		'var koeftx = 3;' +
+		'var koeftxx = 2.9;' +
 
 		'var koefy = 1.19;' +
 		'var koefyy = 1.95;' +
@@ -191,29 +198,29 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		// 'var koeftyy = 3.7;' +
 		'var koefty = 1;' +
 		'var koeftyy = 1;' +
-		'canvas.addEventListener("mousedown", function (e) {' +
-		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
-		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
-		'            draw = true;' +
-		'            context.beginPath();' +
-		'            context.moveTo(mouse.x, mouse.y);' +
-		'        });' +
-		'        canvas.addEventListener("mousemove", function (e) {' +
-		'            if (draw == true) {' +
-		'                mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
-		'                mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
-		'                context.lineTo(mouse.x, mouse.y);' +
-		'                context.stroke();' +
-		'            }' +
-		'        });' +
-		'        canvas.addEventListener("mouseup", function (e) {' +
-		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
-		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
-		'            context.lineTo(mouse.x, mouse.y);' +
-		'            context.stroke();' +
-		'            context.closePath();' +
-		'            draw = false;' +
-		'        });' +
+		// 'canvas.addEventListener("mousedown", function (e) {' +
+		// '            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		// '            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
+		// '            draw = true;' +
+		// '            context.beginPath();' +
+		// '            context.moveTo(mouse.x, mouse.y);' +
+		// '        });' +
+		// '        canvas.addEventListener("mousemove", function (e) {' +
+		// '            if (draw == true) {' +
+		// '                mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		// '                mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
+		// '                context.lineTo(mouse.x, mouse.y);' +
+		// '                context.stroke();' +
+		// '            }' +
+		// '        });' +
+		// '        canvas.addEventListener("mouseup", function (e) {' +
+		// '            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		// '            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
+		// '            context.lineTo(mouse.x, mouse.y);' +
+		// '            context.stroke();' +
+		// '            context.closePath();' +
+		// '            draw = false;' +
+		// '        });' +
 
 		'canvas.ontouchstart = function(e) {' +
 		'            if (e.touches) e = e.touches[0];' +
@@ -224,26 +231,30 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            context.moveTo(mouse.x, mouse.y);' +
 		'            return false;' +
 		'        };' +
-		'        canvas.ontouchmove = function(e){' +
+		'canvas.ontouchmove = function(e){' +
+			' e.width = document.getElementById("example").width;' +
+			' e.height = document.getElementById("example").height;' +
+			'if (e.touches) {' +
+			'	e = e.touches[0];' +
+			'   if (draw == true) {' +
+			'       mouse.x = e.pageX*3 - this.offsetLeft;' +
+			'       mouse.y = e.pageY*2.9 - this.offsetTop;' +
+			'       context.lineTo(mouse.x, mouse.y);' +
+			'       context.stroke();' +
+			'    }' +
+			'    return false;' +
+        '        };' +
+		'        };' +
+		'        canvas.ontouchend = function(e){' +
 		'            if (e.touches) e = e.touches[0];' +
-		'            if (draw == true) {' +
-		'                mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
-		'                mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
-		'                context.lineTo(mouse.x, mouse.y);' +
-		'                context.stroke();' +
-		'            }' +
+		'            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
+		'            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
+		'            context.lineTo(mouse.x, mouse.y);' +
+		'            context.stroke();' +
+		'            context.closePath();' +
+		'            draw = false;' +
 		'            return false;' +
 		'        };' +
-		// '        canvas.ontouchend = function(e){' +
-		// '            if (e.touches) e = e.touches[0];' +
-		// '            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
-		// '            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
-		// '            context.lineTo(mouse.x, mouse.y);' +
-		// '            context.stroke();' +
-		// '            context.closePath();' +
-		// '            draw = false;' +
-		// '            return false;' +
-		// '        };' +
 		'});'+
 		'</script>',
 	].join ('');
