@@ -184,9 +184,9 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
         'var koefyy = 1.95;' +
 
 		'var koeftx = 3-0.6;' +
-		'var koeftxx = 0.8+6;' +
+		'var koeftxx = 0.8+4;' +
 		'var koefty = 2.9-0.7;' +
-		'var koeftyy = 1+1.35;' +
+		'var koeftyy = 1+1.25;' +
 
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
@@ -280,7 +280,7 @@ ImporterApp.prototype.GetWelcomeText = function ()
 		'<table>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - Выровнять по центру</span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - 0Выровнять по центру</span></td>' +
 		'</tr>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
