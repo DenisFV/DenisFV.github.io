@@ -169,7 +169,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'<div id="screen">'+
 		'</div>'+
 		'<script>'+
-		'document.body.style.cursor = "/images/ruler.png";' +
+		// 'document.body.style.cursor = url("images/mycursor.cur");' +
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
 		'canvas.style.width = "80vw";' +
 		'canvas.style.height = "80vh";' +
@@ -184,9 +184,9 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
         'var koefyy = 1.95;' +
 
 		'var koeftx = 3-0.6;' +
-		'var koeftxx = 0.8+7.5;' +
+		'var koeftxx = 0.8+5;' +
 		'var koefty = 2.9-0.7;' +
-		'var koeftyy = 1+1.65;' +
+		'var koeftyy = 1+2;' +
 
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
@@ -280,7 +280,7 @@ ImporterApp.prototype.GetWelcomeText = function ()
 		'<table>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - 0Выровнять по центру</span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - 1Выровнять по центру</span></td>' +
 		'</tr>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
