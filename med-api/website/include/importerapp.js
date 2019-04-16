@@ -169,6 +169,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'<div id="screen">'+
 		'</div>'+
 		'<script>'+
+		'document.body.style.cursor = "alias";' +
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
 		'canvas.style.width = "80vw";' +
 		'canvas.style.height = "80vh";' +
@@ -183,8 +184,8 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
         'var koefyy = 1.95;' +
 
 		'var koeftx = 3-0.6;' +
-		'var koeftxx = 0.8+3;' +
-		'var koefty = 2.9-0.9;' +
+		'var koeftxx = 0.8+5;' +
+		'var koefty = 2.9-0.7;' +
 		'var koeftyy = 1+1.3;' +
 
 		'canvas.addEventListener("mousedown", function (e) {' +
