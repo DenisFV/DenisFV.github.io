@@ -142,7 +142,7 @@ ImporterApp.prototype.ShowAboutDialog2 = function ()
 	var dialogText = [
 		// '<div class="importerdialog">',
 		'<div' +
-		' style="width: 80vw; height: 60vh"' +
+		' style="width: 80vw; height: 80vh"' +
 		'>',
 		this.GetWelcomeText2 (),
 		'</div>' +
@@ -171,61 +171,68 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'<script>'+
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
 		'canvas.style.width = "80vw";' +
-		'canvas.style.height = "60vh";' +
+		'canvas.style.height = "80vh";' +
 		'document.querySelector("#screen").appendChild(canvas);'+
 		'context = canvas.getContext("2d");' +
 		'context.strokeStyle="#ff0000";' +
 		'var mouse = {x: 0, y: 0};' +
 		'var draw = false;' +
-		'var koefx = 1.15;' +
-		'var koefy = 1.5;' +
+		'var koefx = 1.25;' +
+		'var koefxx = 24.15;' +
+		'var koeftx = 3.75;' +
+		'var koeftxx = 13.5;' +
+		'var koefy = 1.19;' +
+		'var koefyy = 1.95;' +
+		'var koefty = 3.5;' +
+		'var koeftyy = 3.7;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
-		'            mouse.x = e.pageX*koefx - this.offsetLeft;' +
-		'            mouse.y = e.pageY*koefy - this.offsetTop;' +
+		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
 		'            draw = true;' +
 		'            context.beginPath();' +
 		'            context.moveTo(mouse.x, mouse.y);' +
 		'        });' +
 		'        canvas.addEventListener("mousemove", function (e) {' +
 		'            if (draw == true) {' +
-		'                mouse.x = e.pageX*koefx - this.offsetLeft;' +
-		'                mouse.y = e.pageY*koefy - this.offsetTop;' +
+		'                mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		'                mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
 		'                context.lineTo(mouse.x, mouse.y);' +
 		'                context.stroke();' +
 		'            }' +
 		'        });' +
 		'        canvas.addEventListener("mouseup", function (e) {' +
-		'            mouse.x = e.pageX*koefx - this.offsetLeft;' +
-		'            mouse.y = e.pageY*koefy - this.offsetTop;' +
+		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
+		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
 		'            context.lineTo(mouse.x, mouse.y);' +
 		'            context.stroke();' +
 		'            context.closePath();' +
 		'            draw = false;' +
 		'        });' +
+
 		'canvas.ontouchstart = function(e) {' +
 		'            if (e.touches) e = e.touches[0];' +
-		'            mouse.x = e.pageX - this.offsetLeft;' +
-		'            mouse.y = e.pageY - this.offsetTop;' +
+		'            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
+		'            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
 		'            draw = true;' +
 		'            context.beginPath();' +
-		'            context.moveTo(mouse.x*koef, mouse.y*koef);' +
+		'            context.moveTo(mouse.x, mouse.y);' +
 		'            return false;' +
 		'        };' +
 		'        canvas.ontouchmove = function(e){' +
 		'            if (e.touches) e = e.touches[0];' +
 		'            if (draw == true) {' +
-		'                mouse.x = e.pageX - this.offsetLeft;' +
-		'                mouse.y = e.pageY - this.offsetTop;' +
-		'                context.lineTo(mouse.x*koef, mouse.y*koef);' +
+		'                mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
+		'                mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
+		'                context.lineTo(mouse.x, mouse.y);' +
 		'                context.stroke();' +
 		'            }' +
 		'            return false;' +
 		'        };' +
 		'        canvas.ontouchend = function(e){' +
 		'            if (e.touches) e = e.touches[0];' +
-		'            mouse.x = e.pageX - this.offsetLeft;' +
-		'            mouse.y = e.pageY - this.offsetTop;' +
-		'            context.lineTo(mouse.x*koef, mouse.y*koef);' +
+		'            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
+		'            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
+		'            context.lineTo(mouse.x, mouse.y);' +
 		'            context.stroke();' +
 		'            context.closePath();' +
 		'            draw = false;' +
