@@ -184,7 +184,7 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'var koefy = 1.19;' +
 		'var koefyy = 1.95;' +
 			'var koefty = 2.9-0.3;' +
-		'var koeftyy = 1;' +
+		'var koeftyy = 1-0.3;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
 		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
