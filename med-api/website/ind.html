@@ -19,7 +19,7 @@
     </h4>
 </div>
 
-<div id="capt" style="padding: 10px; width: 80vw; height: 80vh; border: 2px solid #3aff2d">
+<div id="capt" style="border: 1px solid #3aff2d">
 </div>
 
 
@@ -56,9 +56,9 @@
 
 
     html2canvas(document.querySelector("#capture")).then(canvas => {
-        canvas.style.border = '2px solid #ff0000';
+        canvas.style.border = '1px solid #ff0000';
         // canvas.style.zoom = "1.1";
-        canvas.style.width = '80vw';
+        // canvas.style.width = '80vw';
         // canvas.style.height = "80vh";
         // document.querySelector("#capt").appendChild(canvas);
         document.querySelector("#capt").appendChild(canvas);
