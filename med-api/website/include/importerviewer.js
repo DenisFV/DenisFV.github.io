@@ -168,67 +168,19 @@ ImporterViewer.prototype.AdjustClippingPlanes = function ()
 };
 
 ImporterViewer.prototype.SetFixUp = function () {
-	// var dialogText = [
-	// 	'<div class="importerdialog" id="screen">',
-	// 	html2canvas(document.querySelector("#screen")).then(canvas => {
-	// 		document.body.appendChild(canvas);
-	// 	}),
-	// 	'</div>',
-	// ].join('');
-	// this.aboutDialog.Open({
-	// 	title: 'Описание',
-	// 	text: dialogText,
-	// 	buttons: [
-	// 		{
-	// 			text: 'ок',
-	// 			callback: function (dialog) {
-	// 				dialog.Close();
-	// 			}
-	// 		}
-	// 	]
-	// });
+	var bod = new JSM.Body ();
+
+    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 0.0)));
+    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 0.0)));
+    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 1.0)));
+    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 1.0)));
+
+    bod.AddPolygon (new JSM.BodyPolygon ([0, 1, 2, 3]));
+    var meshe = JSM.ConvertBodyToThreeMeshes (bod);
+    this.viewer.AddMeshes (meshe);
+
+    this.viewer.navigation.EnableFixUp (!this.viewer.navigation.cameraFixUp);
 };
-
-// ImporterApp.prototype.GetImg = function ()
-// {
-// 	html2canvas(document.querySelector("#screen")).then(canvas => {
-// 		document.body.appendChild(canvas);
-// 	});
-//
-// 	var welcomeText = ['<div id="screen"></div>'].join ('');
-// 	return welcomeText;
-// };
-
-
-	// window.takeScreenShot = function() {
-	// 	html2canvas(document.getElementById("example"), {
-	// 		onrendered: function (canvas) {
-	// 			document.body.appendChild(canvas);
-	// 		}
-	// 		// width:100,
-	// 		// height:220
-	// 	});
-	// }
-
-
-	// var c = document.getElementById('the_canvas_element_id');
-	// var t = c.getContext('2d');
-
-
-
-	// var bod = new JSM.Body ();
-
-    // bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 0.0)));
-    // bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 0.0)));
-    // bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 1.0)));
-    // bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 1.0)));
-
-    // bod.AddPolygon (new JSM.BodyPolygon ([0, 1, 2, 3]));
-    // var meshe = JSM.ConvertBodyToThreeMeshes (bod);
-    // this.viewer.AddMeshes (meshe);
-
-    // this.viewer.navigation.EnableFixUp (!this.viewer.navigation.cameraFixUp);
-// };
 
 ImporterViewer.prototype.SetNamedView = function (viewName)
 {

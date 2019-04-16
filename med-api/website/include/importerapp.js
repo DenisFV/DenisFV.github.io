@@ -54,7 +54,7 @@ ImporterApp.prototype.Init = function ()
 	// this.importerButtons.AddButton ('images/fitinwindow.png', 'Выровнять по центру', function () { myThis.FitInWindow (); });
 	// this.importerButtons.AddButton ('images/fitinwindow.png', 'Загрузить файл', function () { myThis.LoadFilesFromHash() });
 	this.importerButtons.AddButton ('images/fitinwindow.png', 'Выровнять по центру', function () { myThis.SetNamedView ('c'); });
-	// this.importerButtons.AddToggleButton ('images/ruler.png', 'images/rulergray.png', 'Замерить угол', function () { myThis.SetFixUp (); });
+	this.importerButtons.AddToggleButton ('images/ruler.png', 'images/rulergray.png', 'Замерить угол', function () { myThis.SetFixUp (); });
 	this.importerButtons.AddButton ('images/top.png', 'Вид сверху', function () { myThis.SetNamedView ('t'); });
 	this.importerButtons.AddButton ('images/bottom.png', 'Вид снизу', function () { myThis.SetNamedView ('b'); });
 	this.importerButtons.AddButton ('images/left.png', 'Вид сбоку', function () { myThis.SetNamedView ('l'); });
@@ -184,9 +184,9 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
         'var koefyy = 1.95;' +
 
 		'var koeftx = 3-0.6;' +
-		'var koeftxx = 0.8+5;' +
+		'var koeftxx = 0.8+6;' +
 		'var koefty = 2.9-0.7;' +
-		'var koeftyy = 1+2;' +
+		'var koeftyy = 1+0.2;' +
 
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
@@ -280,7 +280,7 @@ ImporterApp.prototype.GetWelcomeText = function ()
 		'<table>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - 1Выровнять по центру</span></td>' +
+		'<td><span class="welcometitle" style="color: #006d91"> - 0Выровнять по центру</span></td>' +
 		'</tr>' +
 		'<tr>' +
 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
