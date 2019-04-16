@@ -179,12 +179,12 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
-		'var koeftx = 3.75;' +
-		'var koeftxx = 13.5;' +
+		'var koeftx = 3;' +
+		'var koeftxx = 1;' +
 		'var koefy = 1.19;' +
 		'var koefyy = 1.95;' +
-		'var koefty = 3.5;' +
-		'var koeftyy = 3.7;' +
+		'var koefty = 2.9;' +
+		'var koeftyy = 1;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
 		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
@@ -210,6 +210,8 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'        });' +
 
 		'canvas.ontouchstart = function(e) {' +
+		'			 e.width = document.getElementById("example").width;' +
+		'			 e.height = document.getElementById("example").height;' +
 		'            if (e.touches) e = e.touches[0];' +
 		'            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
 		'            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
