@@ -179,11 +179,11 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
-		'var koeftx = 3;' +
-		'var koeftxx = 1;' +
+			'var koeftx = 3-1;' +
+		'var koeftxx = 0.8;' +
 		'var koefy = 1.19;' +
 		'var koefyy = 1.95;' +
-		'var koefty = 2.9;' +
+			'var koefty = 2.9-0.3;' +
 		'var koeftyy = 1;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
