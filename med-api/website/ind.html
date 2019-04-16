@@ -19,7 +19,7 @@
     </h4>
 </div>
 
-<div id="capt" style="padding: 10px; width: 80vw; height: 80vh; border: 2px solid #3aff2d">
+<div id="capt" style="padding: 10px; border: 2px solid #3aff2d">
 </div>
 
 
@@ -58,7 +58,7 @@
     html2canvas(document.querySelector("#capture")).then(canvas => {
         canvas.style.border = '2px solid #ff0000';
         // canvas.style.zoom = "1.1";
-        canvas.style.width = '80vw';
+        // canvas.style.width = '80vw';
         // canvas.style.height = "80vh";
         // document.querySelector("#capt").appendChild(canvas);
         document.querySelector("#capt").appendChild(canvas);
@@ -78,61 +78,54 @@
         //     touch.y = e.pageY - this.offsetTop;
         //     draw = true;
         //     context.beginPath();
-        //     console.log(0, touch.x, touch.y);
-        //     context.moveTo(touch.x*2, touch.y*2);
+        //     context.moveTo(touch.x, touch.y);
         //     return false;
         // };
-        // canvas.ontouchmove = function(e){
-        //     if (e.touches) e = e.touches[0];
-        //     if (draw == true) {
-        //         touch.x = e.pageX - this.offsetLeft;
-        //         touch.y = e.pageY - this.offsetTop;
-        //         console.log(1, touch.x, touch.y);
-        //         context.lineTo(touch.x*2, touch.y*2);
-        //         context.stroke();
-        //     }
-        //     return false;
-        // };
+        canvas.ontouchmove = function(e){
+            if (e.touches){
+            e = e.touches[0];
+            // if (draw == true) {
+                touch.x = e.clientX;
+                touch.y = e.clientY;
+                context.lineTo(touch.x, touch.y);
+                context.stroke();
+            }
+            return false;
+        };
         // canvas.ontouchend = function(e){
         //     if (e.touches) e = e.touches[0];
         //     touch.x = e.pageX - this.offsetLeft;
         //     touch.y = e.pageY - this.offsetTop;
-        //     console.log(2, touch.x, touch.y);
-        //     context.lineTo(touch.x*2, touch.y*2);
+        //     context.lineTo(touch.x, touch.y);
         //     context.stroke();
         //     context.closePath();
         //     draw = false;
         //     return false;
         // };
 
-        canvas.addEventListener("mousedown", function (e) { //нажал
-            mouse.x = e.pageX*1.237
-                - this.offsetLeft*1.2;
-            mouse.y = e.pageY
-                - this.offsetTop;
-            draw = true;
-            context.beginPath();
-            context.moveTo(mouse.x, mouse.y);
-        });
-        canvas.addEventListener("mousemove", function (e) { //двигаю
-            if (draw == true) {
-                mouse.x = e.pageX*1.237
-                    - this.offsetLeft*1.2;
-                mouse.y = e.pageY - this.offsetTop;
-                context.lineTo(mouse.x, mouse.y);
-                context.stroke();
-            }
-        });
-        canvas.addEventListener("mouseup", function (e) { //отпустил
-            mouse.x = e.pageX*1.237
-            - this.offsetLeft*1.2;
-            mouse.y = e.pageY
-            - this.offsetTop;
-            context.lineTo(mouse.x, mouse.y);
-            context.stroke();
-            context.closePath();
-            draw = false;
-        });
+        // canvas.addEventListener("mousedown", function (e) { //нажал
+        //     mouse.x = e.pageX - this.offsetLeft;
+        //     mouse.y = e.pageY - this.offsetTop;
+        //     draw = true;
+        //     context.beginPath();
+        //     context.moveTo(mouse.x, mouse.y);
+        // });
+        // canvas.addEventListener("mousemove", function (e) { //двигаю
+        //     if (draw == true) {
+        //         mouse.x = e.pageX - this.offsetLeft;
+        //         mouse.y = e.pageY - this.offsetTop;
+        //         context.lineTo(mouse.x, mouse.y);
+        //         context.stroke();
+        //     }
+        // });
+        // canvas.addEventListener("mouseup", function (e) { //отпустил
+        //     mouse.x = e.pageX - this.offsetLeft;
+        //     mouse.y = e.pageY - this.offsetTop;
+        //     context.lineTo(mouse.x, mouse.y);
+        //     context.stroke();
+        //     context.closePath();
+        //     draw = false;
+        // });
     });
 </script>
 </body>
