@@ -168,18 +168,57 @@ ImporterViewer.prototype.AdjustClippingPlanes = function ()
 };
 
 ImporterViewer.prototype.SetFixUp = function () {
-	var bod = new JSM.Body ();
 
-    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 0.0)));
-    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 0.0)));
-    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 1.0)));
-    bod.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 1.0)));
+	// var body = new JSM.Body ();
 
-    bod.AddPolygon (new JSM.BodyPolygon ([0, 1, 2, 3]));
-    var meshe = JSM.ConvertBodyToThreeMeshes (bod);
-    this.viewer.AddMeshes (meshe);
+
+	EventsControls = new EventsControls( camera, renderer.domElement );
+
+	var mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+
+	EventsControls.attach( mesh );
+
+//
+
+	function render() {
+		EventsControls.update();
+		controls.update();
+		renderer.render(scene, camera);
+	}
+
+
+
+	var body = new JSM.GenerateCuboid (1.0, 1.0, 1.0);
+
+
+	var transformation = JSM.TranslationTransformation (
+		new JSM.Coord (10.0, 10.0, 10.0)
+	);
+	body.Transform (transformation);
+
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 0.0)));
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 0.0)));
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (1.0, 0.0, 1.0)));
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 0.0, 1.0)));
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 1.0, 0.0)));
+	// body.AddVertex (new JSM.BodyVertex (new JSM.Coord (0.0, 1.0, 1.0)));
+
+	// body.AddPolygon (new JSM.BodyPolygon ([0, 1, 2, 3]));
+	// body.AddPolygon (new JSM.BodyPolygon ([0, 3, 5, 4]));
+
+	var meshes = JSM.ConvertBodyToThreeMeshes (body);
+
+	this.viewer.AddMeshes (meshes);
 
     this.viewer.navigation.EnableFixUp (!this.viewer.navigation.cameraFixUp);
+
+	// var eye, center, up;
+	// eye = new JSM.Coord (1.0, 3.0, 0.0);
+	// center = new JSM.Coord (0.0, 0.0, 0.0);
+	// up = new JSM.Coord (0.0, 0.0, 1.0);
+	// this.viewer.cameraMove.Set (eye, center, up);
+	// this.viewer.FitInWindow ();
 };
 
 ImporterViewer.prototype.SetNamedView = function (viewName)

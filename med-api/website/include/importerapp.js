@@ -863,6 +863,7 @@ ImporterApp.prototype.Drop = function (event)
 	event.preventDefault ();
 	this.ResetHash ();
 	this.ProcessFiles (event.dataTransfer.files, false);
+	// this.SetFixUp();
 };
 
 ImporterApp.prototype.FileSelected = function (event)

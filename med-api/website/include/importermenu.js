@@ -186,10 +186,11 @@ ImporterButtons.prototype.AddToggleButton = function (image, toggleImage, title,
 		isOn = !isOn;
 		if (isOn) {
 			buttonImage.attr ('src', image);
+			onClick (0);
 		} else {
 			buttonImage.attr ('src', toggleImage);
+			onClick (1);
 		}
-		onClick ();
 	});
 };
 
