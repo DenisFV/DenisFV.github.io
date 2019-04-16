@@ -18,7 +18,7 @@ div.dialogtitle
 
 div.dialogcontent
 {
-	padding : 10px;
+	/*padding : 10px;*/
 	overflow : auto;
 }
 
@@ -31,11 +31,12 @@ div.dialogbutton
 {
 	color : #ffffff;
 	background : linear-gradient(#333333, #111111) #222222;
-	margin : 5px 5px 5px 0px;
+	margin : 5px 5px 5px 5px;
 	padding : 5px 10px;
 	cursor : pointer;
 	border-radius : 3px;
-	float : right;
+	text-align: center;
+	/*float : right;*/
 }
 
 @media only screen and (max-device-width : 250px)

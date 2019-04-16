@@ -55,8 +55,8 @@ FloatingDialog.prototype.Resize = function ()
 		return;
 	}
 	
-	this.dialogDiv.css ('left', ((document.body.clientWidth - this.dialogDiv.width ()) / 2.0) + 'px');
-	this.dialogDiv.css ('top', ((document.body.clientHeight - this.dialogDiv.height ()) / 2.0) + 'px');
+	// this.dialogDiv.css ('left', ((document.body.clientWidth - this.dialogDiv.width ()) / 2.0) + 'px');
+	// this.dialogDiv.css ('top', ((document.body.clientHeight - this.dialogDiv.height ()) / 2.0) + 'px');
 };
 
 FloatingDialog.prototype.MouseClick = function (clickEvent)

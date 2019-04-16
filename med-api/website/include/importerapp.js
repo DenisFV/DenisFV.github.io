@@ -140,13 +140,14 @@ ImporterApp.prototype.ShowMenu = function ()
 ImporterApp.prototype.ShowAboutDialog2 = function ()
 {
 	var dialogText = [
-		// '<div class="importerdialog">',
-		'<div' +
-		' style="width: 80vw; height: 80vh"' +
-		'>',
+		'<div class="importerdialog">',
+		// '<div' +
+		// ' style="width: 100vw; height: 100vh"' +
+		// ' style="width: 10%;"' +
+		// '>',
 		this.GetWelcomeText2 (),
 		'</div>' +
-		'<textarea style="width: 100%"></textarea>',
+		'<textarea style="width: 99%;"></textarea>',
 	].join ('');
 	this.aboutDialog.Open ({
 		title : 'Снимок',
@@ -170,8 +171,8 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'</div>'+
 		'<script>'+
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
-		'canvas.style.width = "80vw";' +
-		'canvas.style.height = "80vh";' +
+		// 'canvas.style.width = "100vw";' +
+		// 'canvas.style.height = "100vh";' +
 		'document.querySelector("#screen").appendChild(canvas);'+
 		'context = canvas.getContext("2d");' +
 		'context.strokeStyle="#ff0000";' +
@@ -179,12 +180,17 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
-		'var koeftx = 3.75;' +
-		'var koeftxx = 13.5;' +
+		// 'var koeftx = 3.75;' +
+		// 'var koeftxx = 13.5;' +
+		'var koeftx = 1;' +
+		'var koeftxx = 1;' +
+
 		'var koefy = 1.19;' +
 		'var koefyy = 1.95;' +
-		'var koefty = 3.5;' +
-		'var koeftyy = 3.7;' +
+		// 'var koefty = 3.5;' +
+		// 'var koeftyy = 3.7;' +
+		'var koefty = 1;' +
+		'var koeftyy = 1;' +
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
 		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
@@ -228,16 +234,16 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'            }' +
 		'            return false;' +
 		'        };' +
-		'        canvas.ontouchend = function(e){' +
-		'            if (e.touches) e = e.touches[0];' +
-		'            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
-		'            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
-		'            context.lineTo(mouse.x, mouse.y);' +
-		'            context.stroke();' +
-		'            context.closePath();' +
-		'            draw = false;' +
-		'            return false;' +
-		'        };' +
+		// '        canvas.ontouchend = function(e){' +
+		// '            if (e.touches) e = e.touches[0];' +
+		// '            mouse.x = e.pageX*koeftx - this.offsetLeft*koeftxx;' +
+		// '            mouse.y = e.pageY*koefty - this.offsetTop*koeftyy;' +
+		// '            context.lineTo(mouse.x, mouse.y);' +
+		// '            context.stroke();' +
+		// '            context.closePath();' +
+		// '            draw = false;' +
+		// '            return false;' +
+		// '        };' +
 		'});'+
 		'</script>',
 	].join ('');
