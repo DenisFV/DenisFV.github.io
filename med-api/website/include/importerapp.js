@@ -179,12 +179,14 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
-			'var koeftx = 3-1;' +
-		'var koeftxx = 0.8;' +
-		'var koefy = 1.19;' +
-		'var koefyy = 1.95;' +
-			'var koefty = 2.9-0.3;' +
+        'var koefy = 1.19;' +
+        'var koefyy = 1.95;' +
+
+		'var koeftx = 3+0.2;' +
+		'var koeftxx = 0.8+0.4;' +
+		'var koefty = 2.9-0.3;' +
 		'var koeftyy = 1-0.3;' +
+
 		'canvas.addEventListener("mousedown", function (e) {' +
 		'            mouse.x = e.pageX*koefx - this.offsetLeft*koefxx;' +
 		'            mouse.y = e.pageY*koefy - this.offsetTop*koefyy;' +
