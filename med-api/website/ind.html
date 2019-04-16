@@ -82,17 +82,19 @@
         //     context.moveTo(touch.x*2, touch.y*2);
         //     return false;
         // };
-        // canvas.ontouchmove = function(e){
-        //     if (e.touches) e = e.touches[0];
-        //     if (draw == true) {
-        //         touch.x = e.pageX - this.offsetLeft;
-        //         touch.y = e.pageY - this.offsetTop;
-        //         console.log(1, touch.x, touch.y);
-        //         context.lineTo(touch.x*2, touch.y*2);
-        //         context.stroke();
-        //     }
-        //     return false;
-        // };
+
+        canvas.ontouchmove = function(e){
+            if (e.touches){
+                e = e.touches[0];
+                // if (draw == true) {
+                touch.x = e.clientX;
+                touch.y = e.clientY;
+                context.lineTo(touch.x, touch.y);
+                context.stroke();
+            }
+            return false;
+        };
+
         // canvas.ontouchend = function(e){
         //     if (e.touches) e = e.touches[0];
         //     touch.x = e.pageX - this.offsetLeft;
@@ -105,34 +107,34 @@
         //     return false;
         // };
 
-        canvas.addEventListener("mousedown", function (e) { //нажал
-            mouse.x = e.pageX*1.237
-                - this.offsetLeft*1.2;
-            mouse.y = e.pageY
-                - this.offsetTop;
-            draw = true;
-            context.beginPath();
-            context.moveTo(mouse.x, mouse.y);
-        });
-        canvas.addEventListener("mousemove", function (e) { //двигаю
-            if (draw == true) {
-                mouse.x = e.pageX*1.237
-                    - this.offsetLeft*1.2;
-                mouse.y = e.pageY - this.offsetTop;
-                context.lineTo(mouse.x, mouse.y);
-                context.stroke();
-            }
-        });
-        canvas.addEventListener("mouseup", function (e) { //отпустил
-            mouse.x = e.pageX*1.237
-            - this.offsetLeft*1.2;
-            mouse.y = e.pageY
-            - this.offsetTop;
-            context.lineTo(mouse.x, mouse.y);
-            context.stroke();
-            context.closePath();
-            draw = false;
-        });
+        // canvas.addEventListener("mousedown", function (e) { //нажал
+        //     mouse.x = e.pageX*1.237
+        //         - this.offsetLeft*1.2;
+        //     mouse.y = e.pageY
+        //         - this.offsetTop;
+        //     draw = true;
+        //     context.beginPath();
+        //     context.moveTo(mouse.x, mouse.y);
+        // });
+        // canvas.addEventListener("mousemove", function (e) { //двигаю
+        //     if (draw == true) {
+        //         mouse.x = e.pageX*1.237
+        //             - this.offsetLeft*1.2;
+        //         mouse.y = e.pageY - this.offsetTop;
+        //         context.lineTo(mouse.x, mouse.y);
+        //         context.stroke();
+        //     }
+        // });
+        // canvas.addEventListener("mouseup", function (e) { //отпустил
+        //     mouse.x = e.pageX*1.237
+        //     - this.offsetLeft*1.2;
+        //     mouse.y = e.pageY
+        //     - this.offsetTop;
+        //     context.lineTo(mouse.x, mouse.y);
+        //     context.stroke();
+        //     context.closePath();
+        //     draw = false;
+        // });
     });
 </script>
 </body>
