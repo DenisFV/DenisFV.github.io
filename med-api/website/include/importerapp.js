@@ -29,6 +29,8 @@ ImporterApp = function ()
 	this.readyForTest = null;
 };
 
+idFile = null;
+
 ImporterApp.prototype.Init = function ()
 {
 	if (!JSM.IsWebGLEnabled () || !JSM.IsFileApiEnabled ()) {
@@ -54,7 +56,7 @@ ImporterApp.prototype.Init = function ()
 	// this.importerButtons.AddButton ('images/fitinwindow.png', 'Выровнять по центру', function () { myThis.FitInWindow (); });
 	// this.importerButtons.AddButton ('images/fitinwindow.png', 'Загрузить файл', function () { myThis.LoadFilesFromHash() });
 	this.importerButtons.AddButton ('images/fitinwindow.png', 'Выровнять по центру', function () { myThis.SetNamedView ('c'); });
-	this.importerButtons.AddToggleButton ('images/ruler.png', 'images/rulergray.png', 'Замерить угол', function () { myThis.SetFixUp (); });
+	// this.importerButtons.AddToggleButton ('images/ruler.png', 'images/rulergray.png', 'Замерить угол', function () { myThis.SetFixUp (); });
 	this.importerButtons.AddButton ('images/top.png', 'Вид сверху', function () { myThis.SetNamedView ('t'); });
 	this.importerButtons.AddButton ('images/bottom.png', 'Вид снизу', function () { myThis.SetNamedView ('b'); });
 	this.importerButtons.AddButton ('images/left.png', 'Вид сбоку', function () { myThis.SetNamedView ('l'); });
@@ -63,7 +65,7 @@ ImporterApp.prototype.Init = function ()
 	// this.importerButtons.AddToggleButton ('images/camera.svg', 'images/camera2.svg', 'Сохрнаить скриншот', function () { myThis.SetFixUp (); });
 	this.importerButtons.AddButton ('images/camera2.svg', 'Скрин', function () { myThis.ShowAboutDialog2 (); });
 	// this.importerButtons.AddButton ('images/right.png', 'Выровнять по (-X)', function () { myThis.SetNamedView ('-x'); });
-	this.importerButtons.AddButton ('images/help.png', 'Помощь', function () { myThis.ShowAboutDialog (); });
+	// this.importerButtons.AddButton ('images/help.png', 'Помощь', function () { myThis.ShowAboutDialog (); });
 
 	this.extensionButtons = new ExtensionButtons (top);
 	this.aboutDialog = new FloatingDialog ();
@@ -87,9 +89,9 @@ ImporterApp.prototype.Init = function ()
 
 	window.onhashchange = this.LoadFilesFromHash.bind (this);
 	var hasHashModel = this.LoadFilesFromHash ();
-	if (hasHashModel && this.isMobile) {
-		this.ShowAboutDialog ();
-	}
+	// if (hasHashModel && this.isMobile) {
+	// 	this.ShowAboutDialog ();
+	// }
 };
 
 ImporterApp.prototype.ClearReadyForTest = function ()
@@ -141,21 +143,47 @@ ImporterApp.prototype.ShowAboutDialog2 = function ()
 {
 	var dialogText = [
 		// '<div class="importerdialog">',
-		'<div' +
+		'<div ' +
 		' style="width: 80vw; height: 80vh"' +
 		'>',
 		this.GetWelcomeText2 (),
-		'</div>' +
-		'<textarea style="width: 100%"></textarea>',
+		'</div>',
+		// '<textarea style="width: 100%"></textarea>',
 	].join ('');
 	this.aboutDialog.Open ({
 		title : 'Снимок',
 		text : dialogText,
 		buttons : [
+            {
+            	text : 'Close',
+                callback : function (dialog) {
+                    dialog.Close ();
+                }
+            },
 			{
-				text : 'ок',
+				text : 'Save',
 				callback : function (dialog) {
-					dialog.Close ();
+                    var c = document.getElementById("screen").children[0];
+                    var dataURL = c.toDataURL("image/png");
+
+                    // var w=window.open('about:blank','image from canvas');
+                    // w.document.write("<img src='"+d+"' alt='from canvas'/>");
+
+                    var link = document.createElement("a");
+                    link.href = dataURL;
+                    link.download = idFile+".jpg";
+                    link.click();
+
+                    // html2canvas($('#screen'), {
+                    //         onrendered: function (canvas) {
+                    //             var a = document.createElement('a');
+                    //             // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+                    //             a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                    //             a.download = 'somefilename.jpg';
+                    //             a.click();
+                    //         }
+                    // });
+                    // dialog.Close ();
 				}
 			}
 		]
@@ -173,10 +201,18 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 		'html2canvas(document.querySelector("#example")).then(canvas => {'+
 		'canvas.style.width = "80vw";' +
 		'canvas.style.height = "80vh";' +
+		'canvas.style.id = "canvas";' +
 		'document.querySelector("#screen").appendChild(canvas);'+
 		'context = canvas.getContext("2d");' +
 		'context.strokeStyle="#ff0000";' +
-		'var mouse = {x: 0, y: 0};' +
+
+        // 'var dataURL = canvas.toDataURL("image/jpeg");\n' +
+        // '                    var link = document.createElement("a");\n' +
+        // '                    link.href = dataURL;\n' +
+        // '                    link.download = "my-image-name.jpg";\n' +
+        // '                    link.click();' +
+
+        'var mouse = {x: 0, y: 0};' +
 		'var draw = false;' +
 		'var koefx = 1.25;' +
 		'var koefxx = 24.15;' +
@@ -253,51 +289,51 @@ ImporterApp.prototype.GetWelcomeText2 = function ()
 
 
 
-ImporterApp.prototype.ShowAboutDialog = function ()
-{
-	var dialogText = [
-		'<div class="importerdialog">',
-		this.GetWelcomeText (),
-		'</div>',
-	].join ('');
-	this.aboutDialog.Open ({
-		title : 'Описание',
-		text : dialogText,
-		buttons : [
-			{
-				text : 'ок',
-				callback : function (dialog) {
-					dialog.Close ();
-				}
-			}
-		]
-	});
-};
-
-ImporterApp.prototype.GetWelcomeText = function ()
-{
-	var welcomeText = [
-		'<table>' +
-		'<tr>' +
-		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - 0Выровнять по центру</span></td>' +
-		'</tr>' +
-		'<tr>' +
-		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - Повернуть в указанное положение</span></td>' +
-		'</tr>' +
-		'<tr>' +
-		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/camera2.svg"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - Сделать скриншот</span></td>' +
-		'</tr>' +
-		'<tr>' +
-		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/help.png"/></span></td>' +
-		'<td><span class="welcometitle" style="color: #006d91"> - Описание</span></td>' +
-		'</tr>' +
-		'</table>',
-	].join ('');
-	return welcomeText;
-};
+// ImporterApp.prototype.ShowAboutDialog = function ()
+// {
+// 	var dialogText = [
+// 		'<div class="importerdialog">',
+// 		this.GetWelcomeText (),
+// 		'</div>',
+// 	].join ('');
+// 	this.aboutDialog.Open ({
+// 		title : 'Описание',
+// 		text : dialogText,
+// 		buttons : [
+// 			{
+// 				text : 'ок',
+// 				callback : function (dialog) {
+// 					dialog.Close ();
+// 				}
+// 			}
+// 		]
+// 	});
+// };
+//
+// ImporterApp.prototype.GetWelcomeText = function ()
+// {
+// 	var welcomeText = [
+// 		'<table>' +
+// 		'<tr>' +
+// 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/fitinwindow.png"/></span></td>' +
+// 		'<td><span class="welcometitle" style="color: #006d91"> - 0Выровнять по центру</span></td>' +
+// 		'</tr>' +
+// 		'<tr>' +
+// 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/top.png"/></span></td>' +
+// 		'<td><span class="welcometitle" style="color: #006d91"> - Повернуть в указанное положение</span></td>' +
+// 		'</tr>' +
+// 		'<tr>' +
+// 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/camera2.svg"/></span></td>' +
+// 		'<td><span class="welcometitle" style="color: #006d91"> - Сделать скриншот</span></td>' +
+// 		'</tr>' +
+// 		'<tr>' +
+// 		'<td style="background: linear-gradient(#333333, #111111) #222222;"><span class="welcometitle"><img src="images/help.png"/></span></td>' +
+// 		'<td><span class="welcometitle" style="color: #006d91"> - Описание</span></td>' +
+// 		'</tr>' +
+// 		'</table>',
+// 	].join ('');
+// 	return welcomeText;
+// };
 
 ImporterApp.prototype.Resize = function ()
 {
@@ -727,6 +763,7 @@ ImporterApp.prototype.ProcessFiles = function (fileList, isUrl)
 	if (userFiles.length === 0) {
 		return;
 	}
+    idFile = fileList[0].replace('testfiles/','').replace('.stl', '');
 
 	this.fileNames = null;
 

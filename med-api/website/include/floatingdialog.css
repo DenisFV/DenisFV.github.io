@@ -27,15 +27,26 @@ div.dialogbuttons
 	overflow : auto;
 }
 
-div.dialogbutton
+div.dialogbuttonSave
 {
 	color : #ffffff;
 	background : linear-gradient(#333333, #111111) #222222;
-	margin : 5px 5px 5px 0px;
+	margin : 5px 5px 5px 5px;
 	padding : 5px 10px;
 	cursor : pointer;
 	border-radius : 3px;
 	float : right;
+}
+
+div.dialogbuttonClose
+{
+	color : #ffffff;
+	background : linear-gradient(#333333, #111111) #222222;
+	margin : 5px 5px 5px 5px;
+	padding : 5px 10px;
+	cursor : pointer;
+	border-radius : 3px;
+	float : left;
 }
 
 @media only screen and (max-device-width : 250px)

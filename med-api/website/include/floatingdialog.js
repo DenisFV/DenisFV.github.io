@@ -6,13 +6,21 @@ FloatingDialog = function ()
 
 FloatingDialog.prototype.Open = function (parameters)
 {
-	function AddButton (dialog, parent, button)
+	function AddButtonClose (dialog, parent, button)
 	{
-		var buttonDiv = $('<div>').addClass ('dialogbutton').html (button.text).appendTo (parent);
+		var buttonDiv = $('<div>').addClass ('dialogbuttonClose').html (button.text).appendTo (parent);
 		buttonDiv.click (function () {
 			button.callback (dialog);
 		});
 	}
+
+    function AddButtonSave (dialog, parent, button)
+    {
+        var buttonDiv = $('<div>').addClass ('dialogbuttonSave').html (button.text).appendTo (parent);
+        buttonDiv.click (function () {
+            button.callback (dialog);
+        });
+    }
 
 	if (this.dialogDiv !== null) {
 		this.Close ();
@@ -23,11 +31,14 @@ FloatingDialog.prototype.Open = function (parameters)
 	this.contentDiv = $('<div>').addClass ('dialogcontent').html (parameters.text).appendTo (this.dialogDiv);
 	var buttonsDiv = $('<div>').addClass ('dialogbuttons').appendTo (this.dialogDiv);
 
-	var i, button;
-	for (i = 0; i < parameters.buttons.length; i++) {
-		button = parameters.buttons[i];
-		AddButton (this, buttonsDiv, button);
-	}
+	// var i, button;
+	// for (i = 0; i < parameters.buttons.length; i++) {
+		var buttonX = parameters.buttons[0];
+		var buttonS = parameters.buttons[1];
+		// if(parameters.buttons[i].equals("X"))
+		AddButtonClose (this, buttonsDiv, buttonX);
+		AddButtonSave (this, buttonsDiv, buttonS);
+	// }
 
 	document.addEventListener ('click', this.MouseClick.bind (this), true);
 	this.Resize ();
