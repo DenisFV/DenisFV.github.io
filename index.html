@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="main">
 <head>
     <meta charset="UTF-8">
     <title>Medical3D</title>
@@ -14,51 +14,52 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
 </head>
 <style>
-    .fullscreen-bg {
-        /*overflow: hidden;*/
-        /*z-index: -100;*/
-        /*position: relative;*/
+    .video-layer h1 {
+        text-align:center;
+        color:#fff;
+        font-size: 70px;
+        margin-top:17%;
+    }
+
+    .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255, 255, 255);
+        background-color: rgb(211, 211, 211);
         height: 100%;
-        width: 100%;
-        /*padding-top:45%;*/
+        max-height: 600px;
+        min-height: 380px;
+        z-index: 0;
+        overflow: hidden;
+        padding: 66px 1.15rem;
+        text-decoration: none;
     }
 
-    .fullscreen-bg__video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0.6;
+    .text{
+        text-align: -webkit-auto;
+        text-indent: 20px;
+        margin: 0;
+        padding: 5px 0!important;
+        font-size: 19px!important;
     }
 
-    /*.overlay {*/
-        /*background: rgba(0,0,0,0.6);*/
-        /*position: absolute;*/
-        /*top:0;*/
-        /*left:0;*/
-        /*width: 100%;*/
-        /*height: 100%;*/
-        /*z-index: 4;*/
-    /*}*/
+    .liArrow{
+        overflow: hidden;
+        background: url(resume/arrow.jpg) no-repeat;
+        background-position: 0 9px;
+        margin-left: -22px;
+        padding-left: 3px;
+        background-size: 17px 22px;
+    }
 
-    /*.overlay h1 {*/
-        /*text-align:center;*/
-        /*color:#fff;*/
-        /*font-size: 70px;*/
-        /*margin-top:17%;*/
-    /*}*/
-
-    @media (max-width: 767px) {
-        .fullscreen-bg {
-            background: url('resume/resume_background.jpg') center center / cover no-repeat;
-        }
-
-        .fullscreen-bg__video {
-            display: none;
-        }
+    .card-portfolio{
+        margin-right: 3px;
+        box-shadow: none;
     }
 </style>
-<body id="main">
+<body>
 
 <nav id="medical3dNav" class="navbar navbar-expand-lg fixed-top white" style="padding: 0;">
     <a class="navbar-brand" href="#main" style="margin: 0; padding: 0;">
@@ -87,63 +88,86 @@
     </form>
 </nav>
 
-<div data-spy="scroll" data-target="#medical3dNav" data-offset="0" class="card card-cascade wider reverse scrollspy-example z-depth-1 mt-4" style="background: none; margin-top: 48px!important;">
-
-    <div class="fullscreen-bg" style="z-index: -1">
-        <video loop muted autoplay poster="resume/resume_background.jpg" class="fullscreen-bg__video">
+<header class="hero" style="margin-top: 48px;">
+    <div class="hero__background" style="width: 100vw;">
+        <video autoplay="" loop="" muted="" poster="resume/resume_background.jpg">
             <source src="resume/video.mp4" type="video/mp4">
             <source src="resume/video.webm" type="video/webm">
         </video>
     </div>
-    <div class="card-group">
-        <div class="card" style="background: none; box-shadow: none;">
-            <div class="card-body mb-4">
-                <h4 class="card-title" style="text-align: center; position: relative; top: 44%; font-size: -webkit-xxx-large; color: #4285f4;">
-                    Medical 3D modeling & printing
-                </h4>
+    <div style="background-color: rgba(0,0,0,0.7); position: absolute; width: 100vw; height: 600px;"></div>
+    <section style="position: absolute;">
+        <div class="card-group">
+            <div class="card" style="background: none; box-shadow: none;">
+                <div class="card-body mb-4">
+                    <h4 class="card-title" style="text-align: center; position: relative; top: 44%; font-size: -webkit-xxx-large; color: #ffffff;">
+                        Medical 3D modeling & printing
+                    </h4>
+                </div>
+            </div>
+            <div style="background: none; box-shadow: none;">
+                <div class="card-body">
+                    <img class="card-img-top" src="resume/skelet.jpg" style="width: 66%; position: relative;">
+                </div>
             </div>
         </div>
-        <div class="mb-4" style="background: none; box-shadow: none;">
-            <div class="card-body">
-                <img class="card-img-top" src="resume/skelet.jpg" style="width: 250px; position: relative;">
-            </div>
-        </div>
-    </div>
+    </section>
+</header>
 
-    <div id="resume" class="card-body card-body-cascade text-center" style="background: white;">
-        <blockquote class="blockquote bq-primary">
-            <p class="bq-title" style="font-size: 34px; padding-bottom: 0;">Обо мне</p>
+
+
+<div id="resume" data-spy="scroll" data-target="#medical3dNav" data-offset="0" class="card card-cascade wider reverse scrollspy-example z-depth-1 mt-4" style="background: none; margin-top: 0!important; ">
+
+    <div class="card-body card-body-cascade text-center" style="background: white;">
+        <p class="bq-title" style="font-size: 34px; padding-bottom: 0; padding-top: 30px; color: #4285f4;">Обо мне</p>
+        <blockquote class="blockquote bq-primary" style="padding: 16px 335px;">
             <p class="bq-title" style="font-size: 29px; color: black!important; padding-bottom: 0; text-align: left;">Филиппова Анастасия Викторовна</p>
             <p class="bq-title" style="font-size: 22px; color: black!important; text-align: left;">
                 Врач травматолог-ортопед, челюстно-лицевой хирург, специалист по 3D технологиям
             </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Около 10 лет профессионально занимаюсь 3D-моделированием и прототипированием в медицине.
-                За это время выполнено более 1000 индивидуальных предоперационных планирований с использованием современных 3D технологий в челюстно-лицевой хирургии, травматологии и ортопедии, нейрохирургии.
-            </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Помимо 3D моделирования костно-реконструктивных операций, индивидуальных шаблонов/резекционных блоков/направителей, сложных анатомических моделей, занимаюсь проектированием новых индивидуальных эндопротезов/имплантатов, а также индивидуальных инструментов с последующей 3D печатью.
-            </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Медицинское и техническое образование, в тандеме позволили изобрести новые способы предоперационного планирования и хирургического лечения, о чем свидетельствуют  38 научных публикаций и 14 патентов. Ежегодно выступаю на отечественных и международных научных конференциях.
-            </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Помимо работы в различных 3D программах, также владею навыками работы с 3D принтерами (Stratasys Objet 260 Connex 3, Trumpf TruPrint 1000, CreatBot D600, MakerBot Replicator Z18, Raise 3d N2 Dual, Picaso Designer PRO 250) и 3D сканерами (например, Thor Drake3D).
-            </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Участвую в научно-практических исследованиях.
-            </p>
-            <p class="card-text" style="text-align: -webkit-auto; text-indent: 20px; margin: 0; padding: 5px 0;">
-                Для меня каждый больной индивидуальный, требующий персонифицированного подхода. Подготовка к оперативному вмешательству осуществляется как подготовка «космонавта к полету в космос».
-            </p>
+            <ul>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Около 10 лет профессионально занимаюсь 3D-моделированием и прототипированием в медицине.
+                        За это время выполнено более 1000 индивидуальных предоперационных планирований с использованием современных 3D технологий в челюстно-лицевой хирургии, травматологии и ортопедии, нейрохирургии.
+                    </p>
+                </li>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Помимо 3D моделирования костно-реконструктивных операций, индивидуальных шаблонов/резекционных блоков/направителей, сложных анатомических моделей, занимаюсь проектированием новых индивидуальных эндопротезов/имплантатов, а также индивидуальных инструментов с последующей 3D печатью.
+                    </p>
+                </li>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Медицинское и техническое образование, в тандеме позволили изобрести новые способы предоперационного планирования и хирургического лечения, о чем свидетельствуют  38 научных публикаций и 14 патентов. Ежегодно выступаю на отечественных и международных научных конференциях.
+                    </p>
+                </li>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Помимо работы в различных 3D программах, также владею навыками работы с 3D принтерами (Stratasys Objet 260 Connex 3, Trumpf TruPrint 1000, CreatBot D600, MakerBot Replicator Z18, Raise 3d N2 Dual, Picaso Designer PRO 250) и 3D сканерами (например, Thor Drake3D).
+                    </p>
+                </li>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Участвую в научно-практических исследованиях.
+                    </p>
+                </li>
+                <li class="liArrow">
+                    <p class="card-text text">
+                        Для меня каждый больной индивидуальный, требующий персонифицированного подхода. Подготовка к оперативному вмешательству осуществляется как подготовка «космонавта к полету в космос».
+                    </p>
+                </li>
+            </ul>
+            <span id="portfolio"></span>
         </blockquote>
     </div>
 
-    <span id="portfolio"></span>
+    <span></span>
     <div>
-        <p class="bq-title" style="font-size: 34px; padding-bottom: 0; color: #4285f4; text-align: center;">Портфолио</p>
+        <p class="bq-title" style="font-size: 34px; padding-bottom: 34px; color: #4285f4; text-align: center;">Портфолио</p>
+
         <div class="card-group" style="padding: 0 0px;">
-            <div class="card">
+            <div class="card card-portfolio" style="margin-left: 3px">
                 <div class="view overlay">
                     <img class="card-img-top" src="portfolio/1/1.jpg">
                     <a href="" data-toggle="modal" data-target="#portfolio_1">
@@ -158,7 +182,7 @@
                     </a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card card-portfolio">
                 <div class="view overlay">
                     <img class="card-img-top" src="portfolio/2.jpg">
                     <a href="#!">
@@ -171,7 +195,7 @@
                     <button type="button" class="btn btn-primary btn-md">Read more</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card card-portfolio">
                 <div class="view overlay">
                     <img class="card-img-top" src="portfolio/3.jpg">
                     <a href="#!">
@@ -184,7 +208,7 @@
                     <button type="button" class="btn btn-primary btn-md">Read more</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card card-portfolio">
                 <div class="view overlay">
                     <img class="card-img-top" src="portfolio/4.jpg">
                     <a href="#!">
@@ -197,7 +221,7 @@
                     <button type="button" class="btn btn-primary btn-md">Read more</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card card-portfolio">
                 <div class="view overlay">
                     <img class="card-img-top" src="portfolio/5.jpg">
                     <a href="#!">
@@ -206,6 +230,142 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Работа #5</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group" style="padding: 0 0px;">
+            <div class="card card-portfolio" style="margin-left: 3px">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/6.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/7.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/8.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/9.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/10.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group" style="padding: 0 0px;">
+            <div class="card card-portfolio" style="margin-left: 3px">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/11.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/12.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <img class="card-img-top" src="portfolio/13.jpg">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <!--<img class="card-img-top" src="portfolio/13.jpg">-->
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                </div>
+            </div>
+            <div class="card card-portfolio">
+                <div class="view overlay">
+                    <!--<img class="card-img-top" src="portfolio/13.jpg">-->
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Работа #</h4>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <button type="button" class="btn btn-primary btn-md">Read more</button>
                 </div>
@@ -220,6 +380,7 @@
                     <div class="text-center">
                         <img class="card-img-top" src="portfolio/1/1.jpg" style="width: 25%;">
                         <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4;">Индивидуальные резекционные блоки для эндопротезирования коленного сустава.</p>
+                        <p class="bq-title" style="font-size: 22px; color: black!important; text-align: left;">Врач травматолог-ортопед, челюстно-лицевой хирург, специалист по 3D технологиям</p>
                         <p style="text-align: left; color: black;">Доступны:</p>
                         <ul style="text-align: left; list-style-type: decimal; color: black;">
                             <li>Индивидуальные резекционные блоки для проведения ориентирующих пинов.</li>
@@ -231,145 +392,6 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="card-group" style="padding: 0 0px;">
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/6.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/7.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/8.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/9.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/10.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="card-group" style="padding: 0 0px;">
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/11.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/12.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <img class="card-img-top" src="portfolio/13.jpg">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <!--<img class="card-img-top" src="portfolio/13.jpg">-->
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="view overlay">
-                <!--<img class="card-img-top" src="portfolio/13.jpg">-->
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Работа #</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary btn-md">Read more</button>
             </div>
         </div>
     </div>
