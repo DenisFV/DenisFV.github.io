@@ -61,9 +61,11 @@
 </style>
 <body>
 
-<nav id="medical3dNav" class="navbar navbar-expand-lg fixed-top white" style="padding: 0;">
-    <a class="navbar-brand" href="#main" style="margin: 0; padding: 0; position: absolute; top: 15%;">
-        <img src="navbar/logo.png" alt="" style="width: 25%; position: relative; left: 9%;">
+<nav id="medical3dNav" class="navbar navbar-expand-lg fixed-top white" style="padding: 0; height: 5%">
+    <a class="navbar-brand" href="#main" style="margin: 0; padding: 0; position: absolute; top: 0;">
+        <img src="navbar/logo.png" alt="" style="width: 25%; position: relative; left: 9%;
+        /*box-shadow: 0 2px 10px 0 rgba(0,0,0,.16), 0 8px 10px 0 rgba(0,0,0,.12); border-radius: 50%;*/
+">
     </a>
     <ul class="nav navbar-nav mr-auto" style="margin-left: 5%">
         <li class="nav-item">
@@ -147,8 +149,8 @@
                                 </p>
                             </li>
                         </ul>
-            <div style="position: absolute; top: 4.9%; right: 0; width: 17%;">
-                <img class="card-img-top" src="resume/skelet.jpg" style="width: 66%; position: relative;">
+            <div style="position: absolute;top: 4.9%;right: 0;width: 19%;">
+                <img class="card-img-top" src="resume/Skeleton.png" style="width: 100%;position: relative;">
             </div>
             <span id="portfolio"></span>
         </blockquote>
@@ -176,54 +178,62 @@
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/2.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/2/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_2">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Работа #2</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <p class="card-text">Индивидуальный сетчатый имплантат для направленной  костной регенерации (увеличения высоты и толщины альвеолярного гребня, а также при его выраженной атрофии).</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_2">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/3.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/3/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_3">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Работа #3</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <p class="card-text">3D моделирование корригирующей остеотомии бедренной кости с последующим проектирование индивидуального шаблона (авторская методика) при юношеском эпифизеолизе головки бедренной кости.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_3">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/4.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/4/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_4">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Работа #4</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <p class="card-text">3D моделирование деформации среднего отдела стопы.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_4">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/5.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/5/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_5">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Работа #5</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <p class="card-text">Индивидуальные шаблоны для точного проведения транспедикулярных винтов (авторская методика).</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_5">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -231,67 +241,77 @@
         <div class="card-group" style="padding: 0 0px;">
             <div class="card card-portfolio" style="margin-left: 3px">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/6.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/6/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_6">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #6</h4>
+                    <p class="card-text">3D моделирование эндопротезирования тазобедренного сустава с последующим проектированием и изготовлением индивидуальных шаблонов/резекционных блоков/направителей.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_6">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/7.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/7/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_7">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #7</h4>
+                    <p class="card-text">Индивидуальный шаблон для установки дентальных имплантатов с немедленной нагрузкой, то есть для так называемой методики «all-on-4».</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_7">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/8.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/8/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_8">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #8</h4>
+                    <p class="card-text">Авторский индивидуальный сетчатый имплантат для восстановления объема нижней челюсти.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_8">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/9.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/9/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_9">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #9</h4>
+                    <p class="card-text">3D моделирование корригирующей остеотомии при посттравматической деформации лучевой кости с последующим проектированием и изготовлением индивидуального шаблона (авторская методика).</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_9">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/10.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/10/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_10">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #10</h4>
+                    <p class="card-text">3D моделирование корригирующей остеотомии первой плюсневой кости стопы (hallux valgus) и проектирование индивидуальных шаблонов/резекционных блоков (авторская методика).</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_10">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -299,69 +319,56 @@
         <div class="card-group" style="padding: 0 0px;">
             <div class="card card-portfolio" style="margin-left: 3px">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/11.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/11/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_11">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #11</h4>
+                    <p class="card-text">Индивидуальные шаблоны для взятия костного трансплантата и закрытия дефекта/изъяна верхней челюсти.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_11">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/12.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/12/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_12">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <h4 class="card-title">Работа #12</h4>
+                    <p class="card-text">3D моделирование в кардиохирургии. Например при протезировании клапана аорты.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_12">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
+                    </a>
                 </div>
             </div>
             <div class="card card-portfolio">
                 <div class="view overlay">
-                    <img class="card-img-top" src="portfolio/13.jpg">
-                    <a href="#!">
+                    <img class="card-img-top" src="portfolio/13/1.jpg">
+                    <a href="" data-toggle="modal" data-target="#portfolio_13">
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
-                </div>
-            </div>
-            <div class="card card-portfolio">
-                <div class="view overlay">
-                    <!--<img class="card-img-top" src="portfolio/13.jpg">-->
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
+                    <h4 class="card-title">Работа #13</h4>
+                    <p class="card-text">3D моделирование в хирургии.</p>
+                    <a href="" data-toggle="modal" data-target="#portfolio_13">
+                        <button type="button" class="btn btn-primary btn-md">Подробнее</button>
                     </a>
                 </div>
+            </div>
+            <div class="card card-portfolio" style="z-index: 1;">
                 <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
+                    <p class="card-text" style="position: absolute; width: 34vw; font-size: 24px; left: 24%; top: 23%;">На сайте представлена лишь треть моих работ, с подробным портфолио возможно ознакомится при встрече или дистанционно.</p>
+                    <h4 class="card-title" style="position: absolute; width: 34vw; font-size: 35px; left: 17%; top: 47%; text-align: center; color: #4285f4;">Буду рада помочь!</h4>
                 </div>
             </div>
-            <div class="card card-portfolio">
-                <div class="view overlay">
-                    <!--<img class="card-img-top" src="portfolio/13.jpg">-->
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Работа #</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-md">Read more</button>
-                </div>
-            </div>
+            <div class="card card-portfolio"></div>
         </div>
     </div>
 
@@ -385,14 +392,14 @@
                         <div style="background: none; box-shadow: none;">
                             <div class="card-body" style="width: 38vw; margin-top: 2vh;">
                                 <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4;">Индивидуальные резекционные блоки для эндопротезирования коленного сустава.</p>
-                                <p style="text-align: left; color: black;">Доступны:</p>
-                                <ul style="text-align: left; list-style-type: decimal; color: black;">
+                                <p style="text-align: left; color: black; font-size: 22px;">Доступны:</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px;">
                                     <li>Индивидуальные резекционные блоки для проведения ориентирующих пинов.</li>
                                     <li>Индивидуальные резекционные блоки для проведения ориентирующих пинов и выполнение дистального опила.</li>
                                     <li>Авторская, методика «5 в 1», революционные индивидуальные резекционные блоки для выполнения последовательно всех 5 опилов.</li>
                                 </ul>
-                                <p style="text-align: left;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
-                                <p style="text-align: left;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                             </div>
                         </div>
                     </div>
@@ -403,13 +410,443 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="portfolio_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true" style="height: 97%;">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe2" style="line-height: 0.9; color: white; font-size: 20px;">Работа #2</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw; padding: 0">
+                                <img class="card-img-top" src="portfolio/2/1.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/2/2.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/2/3.jpg" style="width: 65%;">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 48vw; margin-top: 12vh">
+                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">Индивидуальный сетчатый имплантат для направленной костной регенерации (увеличения высоты и толщины альвеолярного гребня, а также при его выраженной атрофии).</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступны и другие варианты c любым шагом, размером и формой ячейки.</li>
+                                    <li>Также с отверстиями для установки одномоментно имплантаты любой системы.</li>
+                                    <ul><li>(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</li></ul>
+                                    <li>Материал: сертифицированный сплав Ti6Al4V</li>
+                                    <li>В отличие от существующих индивидуальных аналогов, данный имплантат имеет минимальную толщину, максимальную детализацию доступную на сегодняшний день на 3D принтерах. Точное позиционирование.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                                <p style="text-align: left; font-size: 20px;">(Для изготовление данного имплантата необходимо КТ выполненное на спиральном компьютерном томографе).</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3" aria-hidden="true" style="height: 97%;">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe3" style="line-height: 0.9; color: white; font-size: 20px;">Работа #3</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw; padding: 0">
+                                <img class="card-img-top" src="portfolio/3/1.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/3/2.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/3/3.jpg" style="width: 65%;">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 48vw; margin-top: 12vh">
+                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">3D моделирование корригирующей остеотомии бедренной кости с последующим проектирование индивидуального шаблона (авторская методика) при юношеском эпифизеолизе головки бедренной кости.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%">
+                                    <li>Доступны и другие индивидуальные шаблоны при корригирующей остеотомии любой трубчатой кости у детей и взрослых.</li>
+                                    <li>(Подробней можно узнать dr.anastasia3d@gmail.com)</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe4" style="line-height: 0.9; color: white; font-size: 20px;">Работа #4</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/4/1.jpg">
+                                <img class="card-img-top" src="portfolio/4/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 11vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование деформации среднего отдела стопы.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступна подробная визуализация всех анатомических структур по данным КТ/МРТ с последующей 3D печатью. От экономичных до профессиональных фотопоимерных материалов с возможностью комбинации плотности.</li>
+                                    <li>(В отличие от существующих анатомических моделей, данная модель динамичная.)</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_5" tabindex="-1" role="dialog" aria-labelledby="myModalLabe5" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe5" style="line-height: 0.9; color: white; font-size: 20px;">Работа #5</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/5/1.jpg">
+                                <img class="card-img-top" src="portfolio/5/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 20vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальные шаблоны для точного проведения транспедикулярных винтов (авторская методика).</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступны и другие варианты при различных врожденных и приобретенных деформациях позвоночника.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="portfolio_6" tabindex="-1" role="dialog" aria-labelledby="myModalLabe6" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe6" style="line-height: 0.9; color: white; font-size: 20px;">Работа #6</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/6/1.jpg">
+                                <img class="card-img-top" src="portfolio/6/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 11vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование эндопротезирования тазобедренного сустава с последующим проектированием и изготовлением индивидуальных шаблонов/резекционных блоков/направителей.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Помимо классического эндопротезирования данная методика доступна и для других вариантов, например при индивидуальном или онкологическом эндопротезировании тазобедренного сустава.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_7" tabindex="-1" role="dialog" aria-labelledby="myModalLabe7" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 8vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe7" style="line-height: 0.9; color: white; font-size: 20px;">Работа #7</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 25vw;">
+                                <img class="card-img-top" src="portfolio/7/1.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 38vw; margin-top: 2vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальный шаблон для установки дентальных имплантатов с немедленной нагрузкой, то есть для так называемой методики «all-on-4».</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Может использоваться в хирургической стоматологии при полной адентии или при удалении зубов, с последующей установкой дентальных имплантатов и их немедленной нагрузкой.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное». (Для изготовление данного шаблона желательно КТ выполненное на спиральном компьютерном томографе).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_8" tabindex="-1" role="dialog" aria-labelledby="myModalLabe8" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe8" style="line-height: 0.9; color: white; font-size: 20px;">Работа #8</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/8/1.jpg">
+                                <img class="card-img-top" src="portfolio/8/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 6vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Авторский индивидуальный сетчатый имплантат для восстановления объема нижней челюсти.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступны и другие варианты c любым шагом, размером и формой ячейки.</li>
+                                    <li>Также с отверстиями для установки одномоментно имплантаты любой системы.</li>
+                                    <li>Возможен и классический вариант (без ячеек).</li>
+                                    <ul><li>(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</li></ul>
+                                    <li>Материал: сертифицированный сплав Ti6Al4V</li>
+                                    <li>(В отличие от существующих индивидуальных аналогов, данный имплантат имеет минимальную толщину, максимальную детализацию доступную на сегодняшний день на 3D принтерах. Точное позиционирование.)</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                                <p style="text-align: left; font-size: 20px;">(Для изготовление данного имплантата необходимо КТ выполненное на спиральном компьютерном томографе).</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_9" tabindex="-1" role="dialog" aria-labelledby="myModalLabe9" aria-hidden="true" style="height: 97%;">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe9" style="line-height: 0.9; color: white; font-size: 20px;">Работа #9</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw; padding: 0">
+                                <img class="card-img-top" src="portfolio/9/1.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/9/2.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/9/3.jpg" style="width: 65%;">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 49vw; margin-top: 12vh">
+                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">3D моделирование корригирующей остеотомии при посттравматической деформации лучевой кости с последующим проектированием и изготовлением индивидуального шаблона (авторская методика).</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%">
+                                    <li>Доступны и другие индивидуальные шаблоны при корригирующей остеотомии любой трубчатой кости у детей и взрослых.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_10" tabindex="-1" role="dialog" aria-labelledby="myModalLabe10" aria-hidden="true" style="height: 97%;">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 84vw; top: 0vh; margin-bottom: 0;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe10" style="line-height: 0.9; color: white; font-size: 20px;">Работа #10</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw; padding: 0">
+                                <img class="card-img-top" src="portfolio/10/1.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/10/2.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/10/3.jpg" style="width: 65%;">
+                            </div>
+                        </div>
+                        <img class="card-img-top" src="portfolio/10/6.jpg" style="width: 45%; left: 28%; position: absolute;">
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 51vw; margin-top: 20vh">
+                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;">3D моделирование корригирующей остеотомии первой плюсневой кости стопы (hallux valgus) и проектирование индивидуальных шаблонов/резекционных блоков (авторская методика).</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px;">
+                                    <li>Доступны варианты под любую остеотомию (например, L- образную, Z-образную, V-образную и др.)</li>
+                                    <li>Также подобные индивидуальные шаблоны/резекционные блоки доступны и для среднего, заднего отделов.</li>
+                                    <li>Для отработки мануальных навыков доступны индивидуальные анатомические модели, позволяющие отработать данную технику. (Динамические модели, с возможностью добавления мягких структур). Напечатанная кость внутри полностью имитирует оригинал по плотности и ощущениям при выполнении остеотомии или остеосинтеза.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%; z-index: 1;">Закрыть</button>
+                        </div>
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw; position: absolute; padding: 0; right: -46%;">
+                                <img class="card-img-top" src="portfolio/10/4.jpg" style="width: 65%;">
+                                <img class="card-img-top" src="portfolio/10/5.jpg" style="width: 65%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="portfolio_11" tabindex="-1" role="dialog" aria-labelledby="myModalLabe11" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe11" style="line-height: 0.9; color: white; font-size: 20px;">Работа #11</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/11/1.jpg">
+                                <img class="card-img-top" src="portfolio/11/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 6vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальные шаблоны для взятия костного трансплантата и закрытия дефекта/изъяна верхней челюсти.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступны варианты под любой дефект.</li>
+                                    <li>Для отработки мануальных навыков доступны индивидуальные анатомические модели, позволяющие отработать данную технику. Напечатанная кость внутри полностью имитирует оригинал по плотности и ощущениям при выполнении остеотомии или остеосинтеза.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
+                                <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное». (Для выполнения 3D моделирования и изготовления данных шаблонов необходимо КТ выполненное на спиральном компьютерном томографе).</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_12" tabindex="-1" role="dialog" aria-labelledby="myModalLabe12" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe12" style="line-height: 0.9; color: white; font-size: 20px;">Работа #12</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/12/1.jpg">
+                                <img class="card-img-top" src="portfolio/12/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 41vw; margin-top: 20vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование в кардиохирургии. Например при протезировании клапана аорты.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Доступна 3D печать из материла любой плотности.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="portfolio_13" tabindex="-1" role="dialog" aria-labelledby="myModalLabe13" aria-hidden="true">
+        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                    <h4 class="modal-title w-100" id="myModalLabe13" style="line-height: 0.9; color: white; font-size: 20px;">Работа #13</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-group">
+                        <div class="card" style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 21vw;">
+                                <img class="card-img-top" src="portfolio/13/1.jpg">
+                                <img class="card-img-top" src="portfolio/13/2.jpg">
+                            </div>
+                        </div>
+                        <div style="background: none; box-shadow: none;">
+                            <div class="card-body" style="width: 42vw; margin-top: 20vh;">
+                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование в хирургии.</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                                    <li>Например, для точной визуализации опухоли надпочечника с последующей отработкой практических навыков.</li>
+                                    <li>Доступна 3D печать из материла любой плотности.</li>
+                                </ul>
+                                <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
+                            </div>
+                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <!--<h4 class="card-title">На сайте представлена лишь треть моих работ,-->
-        <!--с подробным портфолио возможно ознакомится-->
-        <!--при встрече или дистанционно.-->
-        <!--Буду рада помочь!-->
-    <!--</h4>-->
+
+
+
+
+
+
 
 
 
