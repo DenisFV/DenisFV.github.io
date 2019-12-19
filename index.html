@@ -28,9 +28,6 @@
         justify-content: center;
         color: rgb(255, 255, 255);
         background-color: rgb(211, 211, 211);
-        height: 100%;
-        max-height: 600px;
-        min-height: 380px;
         z-index: 0;
         overflow: hidden;
         padding: 66px 1.15rem;
@@ -58,54 +55,189 @@
         margin-right: 3px;
         box-shadow: none;
     }
+    html,
+    body,
+    header,
+    #intro {
+        height: 100%;
+    }
+
+    #intro {
+        background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .top-nav-collapse {
+        background-color: white;
+    }
+    @media (max-width: 768px) {
+        .navbar:not(.top-nav-collapse) {
+            background-color: white;
+        }
+        .mb-header-top{
+            line-height: 1.5;
+        }
+        h3, h4, h5 {
+            font-size: x-large!important;
+            padding: 0 10px!important;;
+        }
+        .resume-padding{
+            padding: 0 0!important;
+        }
+        .skelet{
+            width: 100%!important;;
+        }
+        .resume-ui{
+            width: 100%!important;
+        }
+        .portfolio-p {
+            position: unset!important;
+            width: auto!important;;
+            font-size: large!important;
+            left: auto!important;
+            top: auto!important;
+        }
+        .portfolio-h4{
+            position: unset!important;
+            width: 100%!important;
+            left: auto!important;
+            top: auto!important;
+        }
+    }
+    /*@media (min-width: 800px) and (max-width: 850px) {*/
+        /*.navbar:not(.top-nav-collapse) {*/
+            /*background-color: white;*/
+        /*}*/
+        /*.mb-header-top{*/
+            /*line-height: 1.5;*/
+        /*}*/
+        /*h3, h4, h5 {*/
+            /*font-size: x-large!important;*/
+            /*padding: 0 10px!important;;*/
+        /*}*/
+        /*.resume-padding{*/
+            /*padding: 0 0!important;;*/
+        /*}*/
+        /*.skelet{*/
+            /*width: 100%!important;*/
+        /*}*/
+        /*.resume-ui{*/
+            /*width: 100%!important;*/
+        /*}*/
+    /*}*/
+    .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+        color: #4285f4;
+    }
+    .navbar-light .nav-item.active .nav-link, .navbar-brand,
+    .navbar-light .nav-item:focus .nav-link,
+    .navbar-light .nav-item:hover .nav-link {
+        color: #e35921!important;;
+    }
+    .mb-header{
+        margin-bottom: 2.75rem;
+        text-align: center;
+        position: relative;
+    }
+    .mb-header-top{
+        margin-bottom: 2.75rem;
+        text-align: center;
+        position: relative;
+    }
+    .resume-padding{
+        padding: 16px 0;
+        padding-left: 335px;
+    }
+    .skelet{
+        width: 21vw;
+    }
+    .resume-ui{
+        width: 50vw;
+    }
+    .portfolio-p {
+        position: absolute;
+        width: 34vw;
+        font-size: 24px;
+        left: 24%;
+        top: 23%;
+        font-weight: 400;
+        color: #747373;
+    }
+    .portfolio-h4{
+        position: absolute;
+        width: 34vw;
+        font-size: 35px;
+        left: 17%;
+        top: 47%;
+        text-align: center;
+        color: #4285f4;
+    }
 </style>
 <body>
 
-<nav id="medical3dNav" class="navbar navbar-expand-lg fixed-top white" style="padding: 0; height: 5%">
-    <a class="navbar-brand" href="#main" style="margin: 0; padding: 0; position: absolute; top: 0;">
-        <img src="navbar/logo.png" alt="" style="width: 25%; position: relative; left: 9%;
-        /*box-shadow: 0 2px 10px 0 rgba(0,0,0,.16), 0 8px 10px 0 rgba(0,0,0,.12); border-radius: 50%;*/
-">
-    </a>
-    <ul class="nav navbar-nav mr-auto" style="margin-left: 5%">
-        <li class="nav-item">
-            <a class="nav-link" href="#resume">Обо мне</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Порфолио</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#print">3D печать</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#sinse">Полезное</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#contacts">Контакты</a>
-        </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <a class="nav-link disabled" href="#">dr.anastasia3d@gmail.com</a>
-        <a class="nav-link disabled" href="#">Ru/Eng</a>
-    </form>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">Medical3D</a>
+        <!--<a class="navbar-brand" href="#main" style="margin: 0; padding: 0; position: absolute; top: 0;">-->
+        <!--<img src="navbar/logo.png" alt="" style="width: 25%; position: relative; left: 9%;">-->
+        <!--</a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <ul class="navbar-nav mr-auto smooth-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" href="#resume">Обо мне</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Порфолио</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#print">3D печать</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sinse">Полезное</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Контакты</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-phone"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Ru/Eng</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
-
-<header class="hero" style="margin-top: 2%;">
-    <div class="hero__background" style="width: 100vw;">
-        <video autoplay="" loop="" muted="" poster="resume/resume_background.jpg">
+<header class="hero" style="padding: 0;">
+    <div class="hero__background" >
+        <video autoplay="" loop="" muted="" poster="">
             <source src="resume/video.mp4" type="video/mp4">
             <source src="resume/video.webm" type="video/webm">
         </video>
     </div>
-    <div style="background-color: rgba(0,0,0,0.7); position: absolute; width: 100vw; height: 600px;"></div>
+    <div style="background-color: rgba(0,0,0,0.7); position: absolute; width: 100vw; height: 100vh;"></div>
     <section style="position: absolute; top: 27%;">
-        <h4 class="card-title" style="text-align: center; position: relative; font-size: -webkit-xxx-large; color: #ffffff; margin-bottom: 2.75rem;">
+        <h4 class="card-title mb-header-top" style="font-size: -webkit-xxx-large;">
             Medical 3D modeling & printing
         </h4>
-        <h3 class="card-title" style="text-align: center; position: relative; font-size: 55px; color: #ffffff; margin-bottom: 2.75rem;">
+        <h3 class="card-title mb-header" style="font-size: 55px;">
             Филиппова Анастасия Викторовна
         </h3>
-        <h5 class="card-title" style="text-align: center; position: relative; font-size: xx-large; color: #ffffff; margin-bottom: 2.75rem;">
+        <h5 class="card-title mb-header" style="font-size: xx-large;">
             Врач травматолог-ортопед, челюстно-лицевой хирург, специалист по 3D технологиям
         </h5>
     </section>
@@ -115,42 +247,50 @@
 
     <div class="card-body card-body-cascade text-center" style="background: white;">
         <p class="bq-title" style="font-size: 34px; padding-bottom: 0; padding-top: 30px; color: #4285f4;">Обо мне</p>
-        <blockquote class="blockquote bq-primary" style="padding: 16px 335px;">
-            <ul>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Около 10 лет профессионально занимаюсь 3D-моделированием и прототипированием в медицине.
-                                    За это время выполнено более 1000 индивидуальных предоперационных планирований с использованием современных 3D технологий в челюстно-лицевой хирургии, травматологии и ортопедии, нейрохирургии.
-                                </p>
-                            </li>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Помимо 3D моделирования костно-реконструктивных операций, индивидуальных шаблонов/резекционных блоков/направителей, сложных анатомических моделей, занимаюсь проектированием новых индивидуальных эндопротезов/имплантатов, а также индивидуальных инструментов с последующей 3D печатью.
-                                </p>
-                            </li>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Медицинское и техническое образование, в тандеме позволили изобрести новые способы предоперационного планирования и хирургического лечения, о чем свидетельствуют  38 научных публикаций и 14 патентов. Ежегодно выступаю на отечественных и международных научных конференциях.
-                                </p>
-                            </li>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Помимо работы в различных 3D программах, также владею навыками работы с 3D принтерами (Stratasys Objet 260 Connex 3, Trumpf TruPrint 1000, CreatBot D600, MakerBot Replicator Z18, Raise 3d N2 Dual, Picaso Designer PRO 250) и 3D сканерами (например, Thor Drake3D).
-                                </p>
-                            </li>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Участвую в научно-практических исследованиях.
-                                </p>
-                            </li>
-                            <li class="liArrow">
-                                <p class="card-text text">
-                                    Для меня каждый больной индивидуальный, требующий персонифицированного подхода. Подготовка к оперативному вмешательству осуществляется как подготовка «космонавта к полету в космос».
-                                </p>
-                            </li>
-                        </ul>
-            <div style="position: absolute; top: 2.1%; right: 0%; width: 21%;">
-                <img class="card-img-top" src="resume/Skeleton.png" style="width: 100%;position: relative;">
+        <blockquote class="blockquote bq-primary resume-padding">
+            <div class="card-group" style="padding: 0 0px;">
+                <div class="card card-portfolio" style="margin-left: 3px; z-index: 1;">
+                    <ul class="resume-ui">
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Около 10 лет профессионально занимаюсь 3D-моделированием и прототипированием в медицине.
+                                За это время выполнено более 1000 индивидуальных предоперационных планирований с использованием современных 3D технологий в челюстно-лицевой хирургии, травматологии и ортопедии, нейрохирургии.
+                            </p>
+                        </li>
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Помимо 3D моделирования костно-реконструктивных операций, индивидуальных шаблонов/резекционных блоков/направителей, сложных анатомических моделей, занимаюсь проектированием новых индивидуальных эндопротезов/имплантатов, а также индивидуальных инструментов с последующей 3D печатью.
+                            </p>
+                        </li>
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Медицинское и техническое образование, в тандеме позволили изобрести новые способы предоперационного планирования и хирургического лечения, о чем свидетельствуют  38 научных публикаций и 14 патентов. Ежегодно выступаю на отечественных и международных научных конференциях.
+                            </p>
+                        </li>
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Помимо работы в различных 3D программах, также владею навыками работы с 3D принтерами (Stratasys Objet 260 Connex 3, Trumpf TruPrint 1000, CreatBot D600, MakerBot Replicator Z18, Raise 3d N2 Dual, Picaso Designer PRO 250) и 3D сканерами (например, Thor Drake3D).
+                            </p>
+                        </li>
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Участвую в научно-практических исследованиях.
+                            </p>
+                        </li>
+                        <li class="liArrow">
+                            <p class="card-text text">
+                                Для меня каждый больной индивидуальный, требующий персонифицированного подхода. Подготовка к оперативному вмешательству осуществляется как подготовка «космонавта к полету в космос».
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card card-portfolio"></div>
+                <div class="card card-portfolio">
+                    <div style="">
+                        <img class="card-img-top skelet" src="resume/Skeleton.png">
+                    </div>
+                </div>
+
             </div>
             <span id="portfolio"></span>
         </blockquote>
@@ -364,8 +504,8 @@
             </div>
             <div class="card card-portfolio" style="z-index: 1;">
                 <div class="card-body">
-                    <p class="card-text" style="position: absolute; width: 34vw; font-size: 24px; left: 24%; top: 23%;">На сайте представлена лишь треть моих работ, с подробным портфолио возможно ознакомится при встрече или дистанционно.</p>
-                    <h4 class="card-title" style="position: absolute; width: 34vw; font-size: 35px; left: 17%; top: 47%; text-align: center; color: #4285f4;">Буду рада помочь!</h4>
+                    <p class="portfolio-p">На сайте представлена лишь треть моих работ, с подробным портфолио возможно ознакомится при встрече или дистанционно.</p>
+                    <h4 class="card-title portfolio-h4">Буду рада помочь!</h4>
                 </div>
             </div>
             <div class="card card-portfolio"></div>
@@ -1086,7 +1226,7 @@
 
 
 
-    <footer class="page-footer font-small blue-grey lighten-5">
+    <footer id="contacts" class="page-footer font-small blue-grey lighten-5">
         <div style="background-color: #4285f4;">
             <div class="container">
                 <div class="row py-4 d-flex align-items-center"></div>
