@@ -106,6 +106,20 @@
             left: auto!important;
             top: auto!important;
         }
+        .portfolio-modal{
+            max-width: 100%!important;
+            top: auto!important;
+        }
+        .portfolio-modal-head{
+            height: 100%!important;
+        }
+        .portfolio-modal-card-body{
+            width: 100%!important;
+        }
+        .portfolio-modal-card-body-text{
+            width: 100%!important;
+            margin-top: 0!important;
+        }
     }
     /*@media (min-width: 800px) and (max-width: 850px) {*/
         /*.navbar:not(.top-nav-collapse) {*/
@@ -173,6 +187,21 @@
         top: 47%;
         text-align: center;
         color: #4285f4;
+    }
+    .portfolio-modal{
+        max-width: 66vw;
+        top: 8vh;
+    }
+    .portfolio-modal-head{
+        height: 5vh;
+        background-color: #4285f4!important;
+    }
+    .portfolio-modal-card-body{
+        width: 25vw;
+    }
+    .portfolio-modal-card-body-text{
+        width: 38vw;
+        margin-top: 2vh;
     }
 </style>
 <body>
@@ -511,11 +540,14 @@
             <div class="card card-portfolio"></div>
         </div>
     </div>
-
+    <!--portfolio-modal-->
+    <!--portfolio-modal-head-->
+    <!--portfolio-modal-card-body-->
+    <!--portfolio-modal-card-body-text-->
     <div class="modal fade" id="portfolio_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 8vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header portfolio-modal-head">
                     <h4 class="modal-title w-100" id="myModalLabel" style="line-height: 0.9; color: white; font-size: 20px;">Работа #1</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
@@ -525,12 +557,12 @@
 
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 25vw;">
+                            <div class="card-body portfolio-modal-card-body">
                                 <img class="card-img-top" src="portfolio/1/1.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 38vw; margin-top: 2vh;">
+                            <div class="card-body portfolio-modal-card-body-text">
                                 <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4;">Индивидуальные резекционные блоки для эндопротезирования коленного сустава.</p>
                                 <p style="text-align: left; color: black; font-size: 22px;">Доступны:</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px;">
