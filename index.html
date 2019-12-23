@@ -106,20 +106,6 @@
             left: auto!important;
             top: auto!important;
         }
-        .portfolio-modal{
-            max-width: 100%!important;
-            top: auto!important;
-        }
-        .portfolio-modal-head{
-            height: 100%!important;
-        }
-        .portfolio-modal-card-body{
-            width: 100%!important;
-        }
-        .portfolio-modal-card-body-text{
-            width: 100%!important;
-            margin-top: 0!important;
-        }
         .print-card{
             position: unset!important;
             left: auto!important;
@@ -150,28 +136,65 @@
             padding: 0!important;
             list-style-type: none;
         }
+        .modal-p-text {
+            font-size: 25px!important;
+            padding-top: 0!important;
+            margin-bottom: 10%!important;
+        }
+        .portfolio-image {
+            width: 100%!important;
+            left: 0!important;
+            position: unset!important;
+            top: 0!important;
+            padding: 0 20px;
+        }
+        .link-image {
+            width: 50%;
+            margin: 0 25%;
+        }
     }
-    /*@media (min-width: 800px) and (max-width: 850px) {*/
-        /*.navbar:not(.top-nav-collapse) {*/
-            /*background-color: white;*/
+    @media (min-width: 769px) {
+        .portfolio-modal-1{
+            max-width: 67%;
+            top: 8%;
+        }
+        .portfolio-modal-card-body-text{
+            width: 38vw;
+            margin-top: 2vh;
+        }
+        .portfolio-modal-2 {
+            max-width: 66vw;
+            top: 0;
+            margin-bottom: 0;
+        }
+        .modal-body-2{
+            width: 87%;
+        }
+        .portfolio-modal-card-body-text-2{
+            width: 48vw;
+            margin-top: 12vh
+        }
+        .portfolio-modal-card-body-text-3 {
+            width: 36vw;
+            margin-top: 15vh;
+        }
+
+        /*::-webkit-scrollbar {*/
+            /*width: 10px;*/
         /*}*/
-        /*.mb-header-top{*/
-            /*line-height: 1.5;*/
+        /*::-webkit-scrollbar-track {*/
+            /*box-shadow: inset 0 0 5px grey;*/
+            /*border-radius: 10px;*/
+            /*opacity: 0.0;*/
         /*}*/
-        /*h3, h4, h5 {*/
-            /*font-size: x-large!important;*/
-            /*padding: 0 10px!important;;*/
+        /*::-webkit-scrollbar-thumb {*/
+            /*background: #4285f4;*/
+            /*border-radius: 10px;*/
         /*}*/
-        /*.resume-padding{*/
-            /*padding: 0 0!important;;*/
+        /*::-webkit-scrollbar-thumb:hover {*/
+            /*background-color: rgba(66, 133, 244, 0.5);*/
         /*}*/
-        /*.skelet{*/
-            /*width: 100%!important;*/
-        /*}*/
-        /*.resume-ui{*/
-            /*width: 100%!important;*/
-        /*}*/
-    /*}*/
+    }
     .navbar.navbar-light .navbar-nav .nav-item .nav-link {
         color: #4285f4;
     }
@@ -218,20 +241,8 @@
         text-align: center;
         color: #4285f4;
     }
-    .portfolio-modal{
-        max-width: 66vw;
-        top: 8vh;
-    }
-    .portfolio-modal-head{
-        height: 5vh;
+    .modal-header{
         background-color: #4285f4!important;
-    }
-    .portfolio-modal-card-body{
-        width: 25vw;
-    }
-    .portfolio-modal-card-body-text{
-        width: 38vw;
-        margin-top: 2vh;
     }
     .print-card{
         position: absolute;
@@ -259,12 +270,28 @@
         margin-top: 11%;
         width: 100%;
     }
+    .modal-body{
+        padding: 0!important;
+    }
+    .modal-p-text {
+        font-size: 29px;
+        padding-top: 20px;
+        text-align: center;
+        color: #4285f4;
+        margin-bottom: 5%;
+    }
+    .portfolio-image {
+         width: 45%;
+         left: 28%;
+         position: absolute;
+         top: 2.5%;
+    }
 </style>
-<body>
+<body id="nav">
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Medical3D</a>
+        <a class="navbar-brand" href="#nav">Medical3D</a>
         <!--<a class="navbar-brand" href="#main" style="margin: 0; padding: 0; position: absolute; top: 0;">-->
         <!--<img src="navbar/logo.png" alt="" style="width: 25%; position: relative; left: 9%;">-->
         <!--</a>-->
@@ -311,6 +338,7 @@
     <div class="hero__background" >
         <video autoplay="" loop="" muted="" poster="">
             <source src="resume/video.mp4" type="video/mp4">
+            <!--<source src="resume/Medical%20WordPress%20Theme%20Home%20Background%20Video%20%5BQ40senBIrFI%5D.mp4" type="video/mp4">-->
             <source src="resume/video.webm" type="video/webm">
         </video>
     </div>
@@ -596,30 +624,25 @@
             <div class="card card-portfolio"></div>
         </div>
     </div>
-    <!--portfolio-modal-->
-    <!--portfolio-modal-head-->
-    <!--portfolio-modal-card-body-->
-    <!--portfolio-modal-card-body-text-->
     <div class="modal fade" id="portfolio_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal" role="document">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-1" role="document">
             <div class="modal-content">
-                <div class="modal-header portfolio-modal-head">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabel" style="line-height: 0.9; color: white; font-size: 20px;">Работа #1</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body portfolio-modal-card-body">
+                            <div class="card-body">
                                 <img class="card-img-top" src="portfolio/1/1.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
                             <div class="card-body portfolio-modal-card-body-text">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4;">Индивидуальные резекционные блоки для эндопротезирования коленного сустава.</p>
+                                <p class="bq-title modal-p-text">Индивидуальные резекционные блоки для эндопротезирования коленного сустава.</p>
                                 <p style="text-align: left; color: black; font-size: 22px;">Доступны:</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px;">
                                     <li>Индивидуальные резекционные блоки для проведения ориентирующих пинов.</li>
@@ -639,9 +662,9 @@
         </div>
     </div>
     <div class="modal fade" id="portfolio_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true" style="height: 97%;">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe2" style="line-height: 0.9; color: white; font-size: 20px;">Работа #2</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
@@ -650,16 +673,16 @@
                 <div class="modal-body">
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw; padding: 0">
-                                <img class="card-img-top" src="portfolio/2/1.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/2/2.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/2/3.jpg" style="width: 65%;">
+                            <div class="card-body modal-body-2">
+                                <img class="card-img-top" src="portfolio/2/1.jpg">
+                                <img class="card-img-top" src="portfolio/2/2.jpg">
+                                <img class="card-img-top" src="portfolio/2/3.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 48vw; margin-top: 12vh">
-                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">Индивидуальный сетчатый имплантат для направленной костной регенерации (увеличения высоты и толщины альвеолярного гребня, а также при его выраженной атрофии).</p>
-                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">Индивидуальный сетчатый имплантат для направленной костной регенерации (увеличения высоты и толщины альвеолярного гребня, а также при его выраженной атрофии).</p>
+                                <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 5%;">
                                     <li>Доступны и другие варианты c любым шагом, размером и формой ячейки.</li>
                                     <li>Также с отверстиями для установки одномоментно имплантаты любой системы.</li>
                                     <ul><li>(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</li></ul>
@@ -669,17 +692,19 @@
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                                 <p style="text-align: left; font-size: 20px;">(Для изготовление данного имплантата необходимо КТ выполненное на спиральном компьютерном томографе).</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3" aria-hidden="true" style="height: 97%;">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document" >
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe3" style="line-height: 0.9; color: white; font-size: 20px;">Работа #3</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
@@ -688,49 +713,50 @@
                 <div class="modal-body">
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw; padding: 0">
-                                <img class="card-img-top" src="portfolio/3/1.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/3/2.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/3/3.jpg" style="width: 65%;">
+                            <div class="card-body modal-body-2">
+                                <img class="card-img-top" src="portfolio/3/1.jpg">
+                                <img class="card-img-top" src="portfolio/3/2.jpg">
+                                <img class="card-img-top" src="portfolio/3/3.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 48vw; margin-top: 12vh">
-                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">3D моделирование корригирующей остеотомии бедренной кости с последующим проектирование индивидуального шаблона (авторская методика) при юношеском эпифизеолизе головки бедренной кости.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование корригирующей остеотомии бедренной кости с последующим проектирование индивидуального шаблона (авторская методика) при юношеском эпифизеолизе головки бедренной кости.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%">
                                     <li>Доступны и другие индивидуальные шаблоны при корригирующей остеотомии любой трубчатой кости у детей и взрослых.</li>
                                     <li>(Подробней можно узнать dr.anastasia3d@gmail.com)</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe4" style="line-height: 0.9; color: white; font-size: 20px;">Работа #4</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/4/1.jpg">
                                 <img class="card-img-top" src="portfolio/4/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 11vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование деформации среднего отдела стопы.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование деформации среднего отдела стопы.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Доступна подробная визуализация всех анатомических структур по данным КТ/МРТ с последующей 3D печатью. От экономичных до профессиональных фотопоимерных материалов с возможностью комбинации плотности.</li>
                                     <li>(В отличие от существующих анатомических моделей, данная модель динамичная.)</li>
@@ -738,101 +764,104 @@
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_5" tabindex="-1" role="dialog" aria-labelledby="myModalLabe5" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe5" style="line-height: 0.9; color: white; font-size: 20px;">Работа #5</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/5/1.jpg">
                                 <img class="card-img-top" src="portfolio/5/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 20vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальные шаблоны для точного проведения транспедикулярных винтов (авторская методика).</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">Индивидуальные шаблоны для точного проведения транспедикулярных винтов (авторская методика).</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Доступны и другие варианты при различных врожденных и приобретенных деформациях позвоночника.</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="portfolio_6" tabindex="-1" role="dialog" aria-labelledby="myModalLabe6" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe6" style="line-height: 0.9; color: white; font-size: 20px;">Работа #6</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/6/1.jpg">
                                 <img class="card-img-top" src="portfolio/6/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 11vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование эндопротезирования тазобедренного сустава с последующим проектированием и изготовлением индивидуальных шаблонов/резекционных блоков/направителей.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование эндопротезирования тазобедренного сустава с последующим проектированием и изготовлением индивидуальных шаблонов/резекционных блоков/направителей.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Помимо классического эндопротезирования данная методика доступна и для других вариантов, например при индивидуальном или онкологическом эндопротезировании тазобедренного сустава.</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_7" tabindex="-1" role="dialog" aria-labelledby="myModalLabe7" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 8vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-1" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe7" style="line-height: 0.9; color: white; font-size: 20px;">Работа #7</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 25vw;">
+                            <div class="card-body">
                                 <img class="card-img-top" src="portfolio/7/1.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 38vw; margin-top: 2vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальный шаблон для установки дентальных имплантатов с немедленной нагрузкой, то есть для так называемой методики «all-on-4».</p>
+                            <div class="card-body portfolio-modal-card-body-text">
+                                <p class="bq-title modal-p-text">Индивидуальный шаблон для установки дентальных имплантатов с немедленной нагрузкой, то есть для так называемой методики «all-on-4».</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Может использоваться в хирургической стоматологии при полной адентии или при удалении зубов, с последующей установкой дентальных имплантатов и их немедленной нагрузкой.</li>
                                 </ul>
@@ -849,26 +878,25 @@
         </div>
     </div>
     <div class="modal fade" id="portfolio_8" tabindex="-1" role="dialog" aria-labelledby="myModalLabe8" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe8" style="line-height: 0.9; color: white; font-size: 20px;">Работа #8</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/8/1.jpg">
                                 <img class="card-img-top" src="portfolio/8/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 6vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Авторский индивидуальный сетчатый имплантат для восстановления объема нижней челюсти.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">Авторский индивидуальный сетчатый имплантат для восстановления объема нижней челюсти.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Доступны и другие варианты c любым шагом, размером и формой ячейки.</li>
                                     <li>Также с отверстиями для установки одномоментно имплантаты любой системы.</li>
@@ -880,17 +908,19 @@
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                                 <p style="text-align: left; font-size: 20px;">(Для изготовление данного имплантата необходимо КТ выполненное на спиральном компьютерном томографе).</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_9" tabindex="-1" role="dialog" aria-labelledby="myModalLabe9" aria-hidden="true" style="height: 97%;">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh; margin-bottom: 0;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe9" style="line-height: 0.9; color: white; font-size: 20px;">Работа #9</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
@@ -899,32 +929,34 @@
                 <div class="modal-body">
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw; padding: 0">
-                                <img class="card-img-top" src="portfolio/9/1.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/9/2.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/9/3.jpg" style="width: 65%;">
+                            <div class="card-body modal-body-2">
+                                <img class="card-img-top" src="portfolio/9/1.jpg">
+                                <img class="card-img-top" src="portfolio/9/2.jpg">
+                                <img class="card-img-top" src="portfolio/9/3.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 49vw; margin-top: 12vh">
-                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;margin-bottom: 5%;">3D моделирование корригирующей остеотомии при посттравматической деформации лучевой кости с последующим проектированием и изготовлением индивидуального шаблона (авторская методика).</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование корригирующей остеотомии при посттравматической деформации лучевой кости с последующим проектированием и изготовлением индивидуального шаблона (авторская методика).</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%">
                                     <li>Доступны и другие индивидуальные шаблоны при корригирующей остеотомии любой трубчатой кости у детей и взрослых.</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_10" tabindex="-1" role="dialog" aria-labelledby="myModalLabe10" aria-hidden="true" style="height: 97%;">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 84vw; top: 0vh; margin-bottom: 0;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe10" style="line-height: 0.9; color: white; font-size: 20px;">Работа #10</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
@@ -933,16 +965,16 @@
                 <div class="modal-body">
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw; padding: 0">
-                                <img class="card-img-top" src="portfolio/10/1.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/10/2.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/10/3.jpg" style="width: 65%;">
+                            <div class="card-body modal-body-1">
+                                <img class="card-img-top" src="portfolio/10/1.jpg">
+                                <img class="card-img-top" src="portfolio/10/2.jpg">
+                                <img class="card-img-top" src="portfolio/10/3.jpg">
                             </div>
                         </div>
-                        <img class="card-img-top" src="portfolio/10/6.jpg" style="width: 45%; left: 28%; position: absolute;">
+                        <img class="card-img-top portfolio-image" src="portfolio/10/6.jpg">
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 51vw; margin-top: 20vh">
-                                <p class="bq-title" style="font-size: 29px;padding-top: 20px;text-align: center;color: #4285f4;">3D моделирование корригирующей остеотомии первой плюсневой кости стопы (hallux valgus) и проектирование индивидуальных шаблонов/резекционных блоков (авторская методика).</p>
+                            <div class="card-body portfolio-modal-card-body-text-3">
+                                <p class="bq-title modal-p-text">3D моделирование корригирующей остеотомии первой плюсневой кости стопы (hallux valgus) и проектирование индивидуальных шаблонов/резекционных блоков (авторская методика).</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px;">
                                     <li>Доступны варианты под любую остеотомию (например, L- образную, Z-образную, V-образную и др.)</li>
                                     <li>Также подобные индивидуальные шаблоны/резекционные блоки доступны и для среднего, заднего отделов.</li>
@@ -951,41 +983,42 @@
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать, увидеть dr.anastasia3d@gmail.com)</p>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное».</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%; z-index: 1;">Закрыть</button>
                         </div>
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw; position: absolute; padding: 0; right: -46%;">
-                                <img class="card-img-top" src="portfolio/10/4.jpg" style="width: 65%;">
-                                <img class="card-img-top" src="portfolio/10/5.jpg" style="width: 65%;">
+                            <div class="card-body">
+                                <img class="card-img-top" src="portfolio/10/4.jpg">
+                                <img class="card-img-top" src="portfolio/10/5.jpg">
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="portfolio_11" tabindex="-1" role="dialog" aria-labelledby="myModalLabe11" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe11" style="line-height: 0.9; color: white; font-size: 20px;">Работа #11</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/11/1.jpg">
                                 <img class="card-img-top" src="portfolio/11/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 6vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">Индивидуальные шаблоны для взятия костного трансплантата и закрытия дефекта/изъяна верхней челюсти.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">Индивидуальные шаблоны для взятия костного трансплантата и закрытия дефекта/изъяна верхней челюсти.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Доступны варианты под любой дефект.</li>
                                     <li>Для отработки мануальных навыков доступны индивидуальные анатомические модели, позволяющие отработать данную технику. Напечатанная кость внутри полностью имитирует оригинал по плотности и ощущениям при выполнении остеотомии или остеосинтеза.</li>
@@ -993,76 +1026,80 @@
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
                                 <p style="text-align: left; font-size: 20px;">P.S. Направление на КТ можно скачать в разделе «Полезное». (Для выполнения 3D моделирования и изготовления данных шаблонов необходимо КТ выполненное на спиральном компьютерном томографе).</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_12" tabindex="-1" role="dialog" aria-labelledby="myModalLabe12" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe12" style="line-height: 0.9; color: white; font-size: 20px;">Работа #12</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/12/1.jpg">
                                 <img class="card-img-top" src="portfolio/12/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 41vw; margin-top: 20vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование в кардиохирургии. Например при протезировании клапана аорты.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование в кардиохирургии. Например при протезировании клапана аорты.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Доступна 3D печать из материла любой плотности.</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="portfolio_13" tabindex="-1" role="dialog" aria-labelledby="myModalLabe13" aria-hidden="true">
-        <div class="modal-dialog modal-large modal-notify modal-info" role="document" style="max-width: 66vw; top: 0vh;">
+        <div class="modal-dialog modal-large modal-notify modal-info portfolio-modal-2" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="height: 5vh; background-color: #4285f4;">
+                <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModalLabe13" style="line-height: 0.9; color: white; font-size: 20px;">Работа #13</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0.5rem 0.7rem; color: white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="card-group">
                         <div class="card" style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 21vw;">
+                            <div class="card-body modal-body-1">
                                 <img class="card-img-top" src="portfolio/13/1.jpg">
                                 <img class="card-img-top" src="portfolio/13/2.jpg">
                             </div>
                         </div>
                         <div style="background: none; box-shadow: none;">
-                            <div class="card-body" style="width: 42vw; margin-top: 20vh;">
-                                <p class="bq-title" style="font-size: 29px; padding-top: 20px; text-align: center; color: #4285f4; margin-bottom: 5%;">3D моделирование в хирургии.</p>
+                            <div class="card-body portfolio-modal-card-body-text-2">
+                                <p class="bq-title modal-p-text">3D моделирование в хирургии.</p>
                                 <ul style="text-align: left; list-style-type: decimal; color: black; font-size: 20px; margin-bottom: 4%;">
                                     <li>Например, для точной визуализации опухоли надпочечника с последующей отработкой практических навыков.</li>
                                     <li>Доступна 3D печать из материла любой плотности.</li>
                                 </ul>
                                 <p style="text-align: left; font-size: 20px;">(Подробней можно узнать dr.anastasia3d@gmail.com)</p>
                             </div>
-                            <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal" style="position: absolute; right: 2%; bottom: 3%;">Закрыть</button>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect ml-auto" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
@@ -1194,7 +1231,7 @@
                     <div class="card-group" style="padding: 3% 0; margin-left: 3%;">
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/1.png">
+                                <img class="card-img-top link-image" src="sinse/1.png">
                                 <a href="sinse/Колено/Направление%20КТ%20-knee.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1202,7 +1239,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/2.png">
+                                <img class="card-img-top link-image" src="sinse/2.png">
                                 <a href="sinse/Колено%20полка/КТ-%20knee%20полочка.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1210,7 +1247,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/3.png">
+                                <img class="card-img-top link-image" src="sinse/3.png">
                                 <a href="sinse/ТБС%20Бедро/Направление%20КТ-%20таз.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1218,7 +1255,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/4.png">
+                                <img class="card-img-top link-image" src="sinse/4.png">
                                 <a href="sinse/Корр.%20остеотомия/КТ-%20knee%20полочка.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1226,7 +1263,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/5.png">
+                                <img class="card-img-top link-image" src="sinse/5.png">
                                 <a href="sinse/Стопы/Направление%20КТ-стопы-без%20нагрузки.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1238,7 +1275,7 @@
                     <div class="card-group" style="padding: 0 0; margin-left: 3%;">
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/6.png">
+                                <img class="card-img-top link-image" src="sinse/6.png">
                                 <a href="sinse/Стопы%20полка/Направление%20КТ-стопы-с%20нагрузкой.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1246,7 +1283,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/7.png">
+                                <img class="card-img-top link-image" src="sinse/7.png">
                                 <a href="sinse/Кисть/Направление%20КТ-общее.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1254,7 +1291,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/8.png">
+                                <img class="card-img-top link-image" src="sinse/8.png">
                                 <a href="sinse/Локоть/Направление%20КТ-локоть.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1262,7 +1299,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/9.png">
+                                <img class="card-img-top link-image" src="sinse/9.png">
                                 <a href="sinse/ЧЛХ%20Стом/Направление%20КТ%20LDG.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1270,7 +1307,7 @@
                         </div>
                         <div class="card card-portfolio">
                             <div class="view overlay">
-                                <img class="card-img-top" src="sinse/9.png">
+                                <img class="card-img-top link-image" src="sinse/9.png">
                                 <a href="sinse/ЧЛХ%20Стом/Направление%20челюсти.pdf" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1394,108 +1431,16 @@
             <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> Филиппова А.В. Все права защищены. Ни одна часть опубликованного материала не может быть воспроизведена без письменного разрешения автора</a>
         </div>
     </footer>
-
-    <!--<footer id="contacts" class="page-footer font-small blue-grey lighten-5">-->
-        <!--<div style="background-color: #4285f4;">-->
-            <!--<div class="container">-->
-                <!--<div class="row py-4 d-flex align-items-center"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container text-center text-md-left mt-5" style="margin-left: 10%;">-->
-            <!--<div class="row mt-3 dark-grey-text" style="width: 150%;">-->
-                <!--<div class="col-md-3 col-lg-4 col-xl-3 mb-4">-->
-                    <!--<h6 class="text-uppercase font-weight-bold">Лечение под ключ</h6>-->
-                    <!--<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">-->
-                    <!--<div class="view overlay z-depth-1-half">-->
-                        <!--<img src="contacts/fon1.jpg" class="img-fluid">-->
-                        <!--<a>-->
-                            <!--<div class="mask rgba-white-light"></div>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="max-width: 10%; padding: 0; margin: 0;">-->
-                    <!--<h6 class="text-uppercase font-weight-bold">Области лечения</h6>-->
-                    <!--<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">-->
-                    <!--<div class="view overlay z-depth-1-half">-->
-                        <!--<img src="contacts/fon2.jpg" class="img-fluid">-->
-                        <!--<a>-->
-                            <!--<div class="mask rgba-white-light"></div>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-3 mx-auto mb-4" style="padding: 0">-->
-                    <!--<h6 class="text-uppercase font-weight-bold" style="margin-bottom: 2.5em;"> </h6>-->
-                    <!--<ul>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--3D моделирование костно-реконструктивных операций (члх, травматология и ортопедия, нейрохирургия).-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Индивидуальные шаблоны/резекционные блоки/направители.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Индивидуальные эндопротезы/имплантаты.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Индивидуальные инструменты.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class=dark-grey-text">-->
-                                <!--Анатомические модели.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Также заинтересована в совместных научно-практических исследованиях.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Могу помочь кардиохирургам и коллегам других хирургических специальностей.-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p class="dark-grey-text">-->
-                                <!--Любая 3D печать (возможна доставка).-->
-                            <!--</p>-->
-                        <!--</li>-->
-
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">-->
-                    <!--<h6 class="text-uppercase font-weight-bold">Контакты</h6>-->
-                    <!--<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">-->
-                    <!--<p>-->
-                        <!--<i class="fas fa-home mr-3"></i>-->
-                        <!--<span>Россия, Санкт-Петербург</span>-->
-                    <!--</p>-->
-                    <!--<p>-->
-                        <!--<i class="fas fa-envelope mr-3"></i>-->
-                        <!--<span>dr.anastasia3d@gmail.com</span>-->
-                        <!--<i class="fab fa-instagram ml-2 fa-2x"> </i>-->
-                    <!--</p>-->
-                    <!--<p>-->
-                        <!--<i class="fas fa-phone mr-3"></i>-->
-                        <!--<span>+7(911) 262-17-19</span>-->
-                        <!--<i class="fab fa-whatsapp ml-2 fa-2x"></i>-->
-                        <!--<i class="fab fa-viber ml-2 fa-2x"/></i>-->
-                    <!--</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="footer-copyright text-center text-black-50 py-3">© 2019 Copyright:-->
-            <!--<a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> Филиппова А.В. Все права защищены. Ни одна часть опубликованного материала не может быть воспроизведена без письменного разрешения автора</a>-->
-        <!--</div>-->
-    <!--</footer>-->
-
 </div>
-
+<script>
+    $(function(){
+        $('a[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            var sc = $(this).attr("href"),
+                dn = $(sc).offset().top;
+            $('html, body').animate({scrollTop: dn}, 1100);
+        });
+    });
+</script>
 </body>
 </html>
