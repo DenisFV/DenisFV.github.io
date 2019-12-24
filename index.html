@@ -153,6 +153,9 @@
             width: 50%;
             margin: 0 25%;
         }
+        .spinner {
+            top: 30%!important;
+        }
     }
     @media (min-width: 769px) {
         .portfolio-modal-1{
@@ -312,6 +315,9 @@
         height: 40px;
         text-align: center;
         font-size: 10px;
+        z-index: 2;
+        position: relative;
+        top: 37%;
     }
     .spinner > div {
         background-color: #4285f4;
@@ -361,7 +367,7 @@
 <body class="body-fixed" id="nav">
 
 <div id="spinner-fon" style="width: 100vw; height: 100vh; background: white; position: absolute; z-index: 1;"></div>
-<div id="spinner" class="spinner" style="z-index: 2; position: relative; top: 37%;">
+<div id="spinner" class="spinner">
     <div class="rect1"></div>
     <div class="rect2"></div>
     <div class="rect3"></div>
